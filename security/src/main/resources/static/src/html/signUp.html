@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/signUp.css">
-    <link rel="stylesheet" href="../css/topBar.css">
+    <link rel="stylesheet" th:href="@{/src/css/signUp.css}">
+    <link rel="stylesheet" th:href="@{/src/css/topBar.css}">
     <title>WebDesign</title>
 </head>
 <body>
@@ -13,7 +13,9 @@
 
         <!--헤더(고정바)-->
         <div class="bodyWrap">
-            <div class="logo"><img src="../picture/logo6.png" onclick=location.href='../../index.html'></div>
+            <div class="logo"><img src="../picture/logo6.png" th:src="@{/src/picture/logo6.png}"
+                                   onclick=location.href='../../index.html' th:onclick="'location.href=\''+ @{/} + '\''"></div>
+<!--            <div class="logo"><img src="../picture/logo6.png" onclick=location.href='../../index.html'></div>-->
             <form action="/join" method="POST">
                 <div class="infoInputWrap">
                     <div class="infoInput idInput">
@@ -45,6 +47,7 @@
                         <input type="tel" name = "phone" placeholder="전화번호">
                     </div>
                 </div>
+                <div th:if="${error}" th:text="${error}" class="alert alert-danger" role="alert"></div>
                 <div class="loginWrap">
                     <button>회원가입</button><BR>
                 </div>

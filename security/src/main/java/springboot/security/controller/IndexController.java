@@ -44,7 +44,7 @@ public class IndexController{
 
     @GetMapping("/joinForm")
     public String joinForm(){
-        return "joinForm";
+        return "../static/src/html/signUp";
     }
 
     @PostMapping("/join")
@@ -55,7 +55,7 @@ public class IndexController{
         String encPassword = bCryptPasswordEncoder.encode(rawPassword);
         user.setPassword(encPassword);
         userRepository.save(user);
-        return "redirect:/src/html/login_signup.html";
+        return "redirect:/login";
     }
 //
 //    @GetMapping("/joinProc")

@@ -33,13 +33,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()
-                .loginPage("/src/html/login.html")
+                .loginPage("/loginForm")
 //                .usernameParameter("username")
                 .loginProcessingUrl("/login")//login 주소 호출 -> security
-                .defaultSuccessUrl("/logon.html")
+                .defaultSuccessUrl("/login")
                 .and()
                 .oauth2Login()
-                .loginPage("/src/html/login.html")
+                .loginPage("/loginForm")
                 .userInfoEndpoint()
                 .userService(principalOauth2UserService);
         // 구글 로그인이 완료된 후의 후처리 필요 -> TIP. no code (access token + user profile info)
