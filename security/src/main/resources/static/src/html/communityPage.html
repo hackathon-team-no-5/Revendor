@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,26 +10,12 @@
     <link rel="stylesheet" href="../css/pageNum.css">
     <title>WebDesign</title>
 </head>
+
 <body>
     <div class="wrap">
         <!--헤더(고정바)-->
-        <div class="headerWrap">
-            <div class="headerNavWrap">
-                <!---로고-->
-                <header class="logoWrap">
-                    <img onclick=location.href='../../index.html' class="logoImg" src="../picture/logo6.png">
-                </header>
-                <!--메뉴 리스트-->
-                <nav class="topWrap">
-                    <ul>
-                        <li><a href="../../index.html">home</a></li>
-                        <li><a href="../html/buyPage.html">buy</a></li>
-                        <li><a href="../html/sellPage.html">sell</a></li>
-                        <li><a href="../html/communityPage.html">community</a></li>
-                        <li><a href="../html/login.html">log in</a></li>
-                    </ul>
-                </nav>
-            </div>
+        <div class="headerWrap" th:replace="fragments/common :: menu('communityPage')">
+
         </div>
 
         <!--본문-->
@@ -123,7 +110,8 @@
                                 <th>제목</th>
                                 <th>작성자</th>
                                 <th>날짜</th>
-                                <th>조회수<th>
+                                <th>조회수
+                                <th>
                             </tr>
                         </thead>
                         <tbody class="communityBoardContents">
@@ -252,13 +240,13 @@
                         </ul>
                     </div>
                 </div>
-        
+
             </div>
 
         </div>
 
 
-        
+
 
         <!--하단 footer-->
         <footer>
@@ -283,4 +271,5 @@
         </footer>
     </div>
 </body>
+
 </html>

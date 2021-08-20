@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+    <!--메뉴바(고정바)-->
+    <div class="headerWrap" th:fragment="menu(menu)">
+        <div class="headerNavWrap">
+            <!---로고-->
+            <header class="logoWrap">
+                <img onclick=location.href='index.html' th:onclick="'location.href=\''+ @{/} + '\''"
+                    class="logoImg" src="src/picture/logo6.png" th:src="@{/src/picture/logo6.png}">
+            </header>
+            <!--메뉴 리스트-->
+            <nav class="topWrap">
+                <ul>
+                    <li><a href="index.html" th:href="@{/}">home</a></li>
+                    <li><a href="src/html/buyPage.html" th:href="@{/board/list}">buy</a></li>
+                    <li><a href="src/html/sellPage.html" th:href="@{/sell}">sell</a></li>
+                    <li><a href="src/html/communityPage.html" th:href="@{/community}">community</a></li>
+                    <li><a href="src/html/login.html" th:href="@{/loginForm}">log in</a></li>
+<!--                    <p sec:authorize="isAuthenticated()">Click <a th:href="@{/logout}">log out</a> </p>-->
+<!--                    <li><a href="loginForm">log in</a></li>-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <!--하단 footer-->
+    <footer>
+        <div class="footerWrapper" th:fragment="footer">
+            <!--footer 왼편-->
+            <div class="footerLeft">
+                <div class="footerLogo">
+                    <img src="../picture/logo6.png" th:src="@{/src/picture/logo6.png}">
+                </div>
+                <ul class="companyInfo">
+                    <li>(주)리벤더</li>
+                    <li>공동대표 : 김건, 김지우, 박민경, 백지연, 차형주</li>
+                    <br>
+                    <li>Copyright © (주)리벤더 All rights reserved. Designed & Programmed by ReVendor</li>
+                </ul>
+            </div>
+            <!--footer 오른편-->
+            <div class="footerRight">
+                <a href="/">어플 다운받기</a>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>
