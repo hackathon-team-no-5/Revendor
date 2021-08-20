@@ -75,29 +75,29 @@
 
             <!--iframe-->
             <div class="iframe">
-                <iframe id="iframe" name="iframe" onload="autoResize(this)" onchange="listChoose()" frameborder="0"
-                    src="../html/luxuryItem.html"></iframe>
+                <iframe id="iframe" name="iframe" 
+                    th:src="@{/board/list/test}"></iframe>
             </div>
 
             <!--홈화면 카테고리 src-->
             <script>
-                var url = new URL(location.href);
-                var param = url.searchParams.get("c");
+                // var url = new URL(location.href);
+                // var param = url.searchParams.get("c");
 
-                var iframe = document.getElementById("iframe");
+                // var iframe = document.getElementById("iframe");
 
-                var luxury = document.getElementsByClassName("categoryChoose")[0].style;
-                var nft = document.getElementsByClassName("categoryChoose")[1].style;
-                var area = document.getElementsByClassName("categoryChoose")[2].style;
+                // var luxury = document.getElementsByClassName("categoryChoose")[0].style;
+                // var nft = document.getElementsByClassName("categoryChoose")[1].style;
+                // var area = document.getElementsByClassName("categoryChoose")[2].style;
 
-                switch (param) {
-                    case "a":
-                        iframe.src = "../html/luxuryItem.html";
-                        break;
-                    case "b":
-                        iframe.src = '../html/nftItem.html';
-                        break;
-                }
+                // switch (param) {
+                //     case "a":
+                //         iframe.src = "../html/luxuryItem.html";
+                //         break;
+                //     case "b":
+                //         iframe.src = '../html/nftItem.html';
+                //         break;
+                // }
 
 // < !--                // function listChoose(){-->
 // < !--                //     if(iframe.src="../html/luxuryItem.html"){-->

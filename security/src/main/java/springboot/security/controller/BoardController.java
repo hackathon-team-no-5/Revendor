@@ -35,6 +35,20 @@ public class BoardController {
         return "../static/src/html/buyPage";
     }
 
+    @GetMapping("/list/test")
+    public String listTest(Model model, @PageableDefault(size = 2) Pageable pageable,
+                       @RequestParam(required = false, defaultValue = "") String searchText) {
+//        Page<Board> boards = boardRepository.findAll(pageable);
+        Page<Board> boards = boardRepository.findByTitleContainingOrContentContaining(searchText, searchText, pageable);
+        int startPage = Math.max(1, boards.getPageable().getPageNumber() - 4);
+        int endPage = Math.min(boards.getTotalPages(), boards.getPageable().getPageNumber() + 4);
+
+        model.addAttribute("startPage", startPage);
+        model.addAttribute("endPage", endPage);
+        model.addAttribute("boards", boards);
+        return "../static/src/html/luxuryItem";
+    }
+
     @GetMapping("/form")
     public String form(Model model, @RequestParam(required = false) Long id) {
         if (id == null) {
