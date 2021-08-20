@@ -1,0 +1,116 @@
+.textBundle{ /*카드 묶음*/
+	margin: 30px 0 40px 0;
+}
+
+.cardBundle{ /*카드 묶음 grid*/
+	display:grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repead(2, 1fr);
+	padding: 10px;
+	row-gap : 40px;
+	column-gap: 38px;
+	float:left;
+	margin:0 0 60px 0;
+}
+
+.textBundle>span:nth-child(1){ /*타이틀*/
+	font-weight: 600;
+	font-size:19px;
+	margin-right: 10px;
+}
+
+.textBundle>span:nth-child(2){ /*상세설명*/
+	color: #6d5c5c;
+	font-size:15px;
+}
+
+.textBundle>a{ /*더보기*/
+	color: #6d5c5c;
+	text-decoration-line: none;
+	font-size:16px;
+	float:right;
+}
+
+.textBundle>a:hover{
+	color: rgb(204, 47, 100);
+	transition: 0.3s ease;
+}
+
+
+/*아이템카드*/
+
+/* .itemCard>button{
+	position:absolute;
+	display : none;
+	padding: 10px;
+	font-size:17px;
+	background-color: #8566FF;
+	color:white;
+	border:0px;
+	cursor:pointer;
+	border-radius: 5px;
+	box-shadow: 0 5px 5px -2px rgb(139, 139, 139);
+} */
+
+
+.itemCard{
+	width : 200px;
+	height: 300px;
+	border-radius: 10px;
+	cursor: pointer;
+	background: white;
+	box-shadow : 0px 7px 10px 0px #d5d3da;
+	transition: 0.3s ease;
+} 
+
+.itemCard:hover{
+	transform: translateY(10px);
+}
+/* 
+.itemCard:hover button{hover시 버튼
+	display: block;
+} */
+
+
+.itemCard>img{
+	width : 200px;
+	height: 200px;
+	border-radius: 7px 7px 0 0;
+	margin: 0;
+}
+
+.itemText{ /*물건 설명창*/
+	width: 180px;
+	padding : 10px 10px 5px 10px;
+}
+
+.itemType{/*아이템 타입*/
+	text-align: left;
+	width: 180px;
+	float: left;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.itemTitle{/*제목*/
+	font-weight: 600;
+	width: 180px;
+	float:left;
+	font-size : 17px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+
+.itemPrice{/*가격*/
+	float:left;
+	width: 120px;
+	margin-top : 14px;
+	font-size : 18px;
+}
+
+.itemTitle, .itemType, .itemPrice{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}

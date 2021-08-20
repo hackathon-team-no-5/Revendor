@@ -1,0 +1,38 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://221.168.38.225:3306/Revendor?serverTimezone=Asia/Seoul
+    username: fintech5
+    password: fintech5
+
+#  mvc:
+#    view:
+#      prefix: /templates/
+#      suffix: .mustache
+
+  jpa:
+    hibernate:
+      ddl-auto: update #create update none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 91266716448-p5ckjn1bfbm5c45ouocva2jsn89qbm8s.apps.googleusercontent.com
+            client-secret: 0FKcYLp5OkLARVqQFIaOB4Qz
+            scope:
+              - email
+              - profile

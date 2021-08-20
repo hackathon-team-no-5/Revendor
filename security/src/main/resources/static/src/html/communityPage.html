@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/communityPage.css">
+    <link rel="stylesheet" href="../css/topBar.css">
+    <link rel="stylesheet" href="../css/pageNum.css">
+    <title>WebDesign</title>
+</head>
+<body>
+    <div class="wrap">
+        <!--헤더(고정바)-->
+        <div class="headerWrap">
+            <div class="headerNavWrap">
+                <!---로고-->
+                <header class="logoWrap">
+                    <img onclick=location.href='../../index.html' class="logoImg" src="../picture/logo6.png">
+                </header>
+                <!--메뉴 리스트-->
+                <nav class="topWrap">
+                    <ul>
+                        <li><a href="../../index.html">home</a></li>
+                        <li><a href="../html/buyPage.html">buy</a></li>
+                        <li><a href="../html/sellPage.html">sell</a></li>
+                        <li><a href="../html/communityPage.html">community</a></li>
+                        <li><a href="../html/login.html">log in</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!--본문-->
+        <div class="bodyWrap">
+
+            <!--검색창, 글쓰기-->
+            <div class="bodyTop">
+                <div class="bodyInput">
+                    <div class="writeBt">
+                        <input type="button" value="글쓰기" onClick="">
+                    </div>
+                    <div class="search">
+                        <input type="text" placeholder="관련된 주제로 검색해보세요!">
+                        <img src="../picture/loupe.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bodyMain">
+                <div class="category">
+                    <label>카테고리</label>
+                    <ul>
+                        <li><a href="">최신글</a></li>
+                        <li><a href="">질문</a></li>
+                        <li><a href="">일상</a></li>
+                        <li><a href="">기타</a></li>
+                    </ul>
+                </div>
+                <!--게시글 카드-->
+                <!-- <div class="contents">
+                    <div class="contentsTitleWrap">
+                        <div class="contentsWrapTitle">최신 글</div>
+                        <div class="contentsWrapTitleDetail">가장 최근에 올라온 글을 확인해보세요!</div>
+                    </div>
+                    <div class="contentsCard">
+                        <div class="contentsTitle">뿌링클 먹었당</div>
+                        <div class="contentsArticle">방금 점심으로 뿌링클 먹었어요! 쏘 딜리샷스,,,</div>
+                        <div class="contentsBottom">
+                            <div class="contentsCommentWrap">
+                                <img src="../picture/chat-comment-oval-speech-bubble-with-text-lines.png">
+                                <div class="contentsComment">댓글</div><div class="contentsCommentNum">23</div>
+                            </div>
+                            <div class="contentsWriter">
+                                <div class="writerTitle">작성자</div>
+                                <div class="writerName">뿌링클 조지부시
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contentsCard">
+                        <div class="contentsTitle">프라다 어떤 가방이 예쁜가요?</div>
+                        <div class="contentsArticle">호보백이 사고싶네요 ㅠㅠ 근데 다른 숄더백도 예뻐보이고... 뭘 추천하시나요?</div>
+                        <div class="contentsBottom">
+                            <div class="contentsCommentWrap">
+                                <img src="../picture/chat-comment-oval-speech-bubble-with-text-lines.png">
+                                <div class="contentsComment">댓글</div><div class="contentsCommentNum">23</div>
+                            </div>
+                            <div class="contentsWriter">
+                                <div class="writerTitle">작성자</div>
+                                <div class="writerName">명품 알랍</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contentsCard">
+                        <div class="contentsTitle">해커톤 준비 너무 힘드네요</div>
+                        <div class="contentsArticle">해커톤 5조 블록체인이 채고 다 뿌수자</div>
+                        <div class="contentsBottom">
+                            <div class="contentsCommentWrap">
+                                <img src="../picture/chat-comment-oval-speech-bubble-with-text-lines.png">
+                                <div class="contentsComment">댓글</div><div class="contentsCommentNum">23</div>
+                            </div>
+                            <div class="contentsWriter">
+                                <div class="writerTitle">작성자</div>
+                                <div class="writerName">핀테크</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!--게시판-->
+                <div class="communityBoard">
+                    <!--게시판 타이틀-->
+                    <div class="communityTitle">
+                        <span>🔥최신글🔥</span>
+                        <span>가장 최근에 올라온 글을 확인해보세요!</span>
+                    </div>
+                    <!--게시판 본문-->
+                    <table>
+                        <thead class="communityBoardTitle">
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>날짜</th>
+                                <th>조회수<th>
+                            </tr>
+                        </thead>
+                        <tbody class="communityBoardContents">
+                            <tr>
+                                <td>1</td>
+                                <td>아무 글이나 써보도록 하겠습니다. 호호.</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>사랑니 발치를 하고 왔는데 부기가 안빠지네요 ㅠㅠ 얼음찜질 해야하나요?</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>아무 글이나 써보도록 하겠습니다. 호호.</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>아무 글이나 써보도록 하겠습니다. 호호.</td>
+                                <td>길~~게 써보겠</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>아무 글이나 써보도록 하겠습니다. 호호.</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>아무 글이나 써보도록 하겠습니다. 호호.</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>사랑니 발치를 하고 왔는데 부기가 안빠지네요 ㅠㅠ 얼음찜질 해야하나요?</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>아무 글이나 써보도록 하겠습니다. 호호.</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>아무 글이나 써보도록 하겠습니다. 호호.</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>아무 글이나 써보도록 하겠습니다. 호호.</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>아무 글이나 써보도록 하겠습니다. 호호.</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>사랑니 발치를 하고 왔는데 부기가 안빠지네요 ㅠㅠ 얼음찜질 해야하나요?</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>아무 글이나 써보도록 하겠습니다. 호호.</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>아무 글이나 써보도록 하겠습니다. 호호.</td>
+                                <td>길~~게 써보겠</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>아무 글이나 써보도록 하겠습니다. 호호.</td>
+                                <td>핀테크</td>
+                                <td>2021.08.19.</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!--페이지 넘기기-->
+                    <div class="pageWrap">
+                        <ul class="page">
+                            <li><a href="/">1</a></li>
+                            <li><a href="/">2</a></li>
+                            <li><a href="/">3</a></li>
+                            <li><a href="/">4</a></li>
+                            <li><a href="/">5</a></li>
+                            <li><a href="/">6</a></li>
+                            <li><a href="/">7</a></li>
+                            <li><a href="/">8</a></li>
+                            <li><a href="/">9</a></li>
+                            <li><a href="/">10</a></li>
+                            <li><a href="/">Next</a></li>
+                        </ul>
+                    </div>
+                </div>
+        
+            </div>
+
+        </div>
+
+
+        
+
+        <!--하단 footer-->
+        <footer>
+            <div class="footerWrapper">
+                <!--footer 왼편-->
+                <div class="footerLeft">
+                    <div class="footerLogo">
+                        <img src="../picture/logo6.png">
+                    </div>
+                    <ul class="companyInfo">
+                        <li>(주)리벤더</li>
+                        <li>공동대표 : 김건, 김지우, 박민경, 백지연, 차형주</li>
+                        <br>
+                        <li>Copyright © (주)리벤더 All rights reserved. Designed & Programmed by ReVendor</li>
+                    </ul>
+                </div>
+                <!--footer 오른편-->
+                <div class="footerRight">
+                    <a href="app.html">어플 다운받기</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

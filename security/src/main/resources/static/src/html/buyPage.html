@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/buyPage.css">
+    <link rel="stylesheet" href="../css/topBar.css">
+    <title>WebDesign</title>
+
+    <!--iframe 자동 사이즈 조절 script-->
+    <!-- <script language="JavaScript">
+    function autoResize(obj){
+        var newheight;
+        var newwidth;
+
+        if(obj.contentDocument){
+            newheight = obj.contentDocument.documentElement.scrollHeight+30;
+            newwidth = obj.contentDocument.documentElement.scrollWidth+30;
+            } else { newheight=obj.contentWindow.document.body.scrollHeight+30;
+            newwidth=obj.contentWindow.document.body.scrollWidth+30;
+            }
+            obj.height= newheight + "px";
+            obj.width= newwidth + "px";
+         }
+    </script> -->
+
+</head>
+<body>
+    <div class="wrap">
+        <!--헤더(고정바)-->
+        <div class="headerWrap">
+            <div class="headerNavWrap">
+                <!---로고-->
+                <header class="logoWrap">
+                    <img onclick=location.href='../../index.html' class="logoImg" src="../picture/logo6.png">
+                </header>
+                <!--메뉴 리스트-->
+                <nav class="topWrap">
+                    <ul>
+                        <li><a href="../../index.html">home</a></li>
+                        <li><a href="../html/buyPage.html">buy</a></li>
+                        <li><a href="../html/sellPage.html">sell</a></li>
+                        <li><a href="../html/communityPage.html">community</a></li>
+                        <li><a href="../html/login.html">log in</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!--본문-->
+        <div class="bodyWrap">
+
+            <!--검색창, 판매버튼-->
+            <div class="bodyTop">
+                <div class="bodyInput">
+                    <div class="search">
+                        <input type="text" placeholder="찾으시는 물건이 있나요?">
+                        <img src="../picture/loupe.png">
+                    </div>
+                    <!-- <div class="category">
+                        <ul>
+                            <li>
+                                <span>카테고리</span>
+                                <ul class="subCategory">
+                                    <li><a href="../html/luxuryItem.html" target="iframe">고가 물품</a></li>
+                                    <li><a href="../html/nftItem.html" target="iframe">NFT</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div> --> <!--dropdown 시도...ㅠㅠ-->
+                    <div class="category">
+                        <ul>
+                            <li><a class="categoryChoose" href="../html/luxuryItem.html" target="iframe">👉고가 물품</a></li>
+                            <li><a class="categoryChoose" href="../html/nftItem.html" target="iframe">👉NFT</a></li>
+                            <li><a class="categoryChoose" href="">👉지역별</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--배경 이미지-->
+            <!-- <img class="mainImg" src="mainimg.png"> -->
+
+            <!--iframe-->
+            <div class="iframe">
+                <iframe id="iframe" name="iframe" onload="autoResize(this)" onchange="listChoose()" frameborder="0" src="../html/luxuryItem.html"></iframe>
+            </div>
+
+            <!--홈화면 카테고리 src-->
+            <script>
+                var url = new URL(location.href);
+                var param = url.searchParams.get("c");
+
+                var iframe = document.getElementById("iframe");
+
+                var luxury = document.getElementsByClassName("categoryChoose")[0].style;
+                var nft = document.getElementsByClassName("categoryChoose")[1].style;
+                var area = document.getElementsByClassName("categoryChoose")[2].style;
+
+                switch(param) {
+                    case "a" :
+                        iframe.src="../html/luxuryItem.html";
+                        break;
+                    case "b" :
+                        iframe.src='../html/nftItem.html';
+                        break;
+                }
+
+<!--                // function listChoose(){-->
+<!--                //     if(iframe.src="../html/luxuryItem.html"){-->
+<!--                //         alert(1);-->
+<!--                //         luxury.color='#8566FF';-->
+<!--                //         luxury.fontWeight='600';-->
+<!--                //     } else if(iframe.src="../html/nftItem.html") {-->
+<!--                //         nft.color = '#8566FF';-->
+<!--                //         nft.fontWeight = '600';-->
+<!--                //     }-->
+<!--                // }-->
+
+            </script>
+
+        </div>
+
+        <!--하단 footer-->
+        <footer>
+            <div class="footerWrapper">
+                <!--footer 왼편-->
+                <div class="footerLeft">
+                    <div class="footerLogo">
+                        <img src="../picture/logo6.png">
+                    </div>
+                    <ul class="companyInfo">
+                        <li>(주)리벤더</li>
+                        <li>공동대표 : 김건, 김지우, 박민경, 백지연, 차형주</li>
+                        <br>
+                        <li>Copyright © (주)리벤더 All rights reserved. Designed & Programmed by ReVendor</li>
+                    </ul>
+                </div>
+                <!--footer 오른편-->
+                <div class="footerRight">
+                    <a href="/">어플 다운받기</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

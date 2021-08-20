@@ -1,0 +1,196 @@
+/*폰트 및 기본 설정*/
+
+@font-face{
+	font-family: "myfont";
+	src: url('../font/NanumSquareR.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face{
+	font-family: "myfont";
+	src: url('../font/NanumSquareB.ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/*입력wrap*/
+.infoWrap{
+    padding : 20px;
+}
+
+form{
+    height : 100%;
+    margin-bottom: 50px;
+}
+
+.topWrap>ul>li:nth-child(3){
+	font-weight: bold;
+	border-bottom: 2px solid #8566FF;
+}
+
+/*제목*/
+.titleWrap{
+    font-family: 'myfont';
+    margin: 0 auto;
+    margin-top: 130px;
+    padding-bottom: 30px;
+    width: 920px;
+
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 110px 1fr 1fr;
+    place-content: center;
+    place-items:center;
+
+    border-radius: 30px;
+    box-shadow : 0px 7px 10px 0px #d8d3da;
+    background-color: #fcfafd;
+}
+
+.title {
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0.2em;
+    color: #8566FF;
+    font-weight: bold;
+}
+.subTitle{
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+/*사진 선택*/
+
+#choosePic{
+    display: none;
+}
+
+.picText{
+    width : 82.8%;
+    margin-top: 20px;
+    float:right;
+}
+
+.picText>label{
+    cursor: pointer;
+    font-size:18px;
+}
+
+.picText>label:hover{
+    color:#8566FF;
+}
+
+/*입력란*/
+
+.inputBlank{
+    height: 70px;
+    border-bottom: 2px dotted rgb(227, 219, 231);
+}
+
+.labelText{
+    color:#5F4C83;
+    font-size: 18px;
+    width: 15%;
+    letter-spacing: 0.4em;
+    line-height:70px;
+    float:left;
+}
+
+.infoInput { /*입력*/
+    width: 80%;
+    float:right;
+    margin-top: 13px;
+    font-size: 16px;
+    padding: 12px;
+    border : 1px solid #aaa;
+    font-family: myfont;
+    border-radius: 10px;
+}
+
+input:hover{
+    background-color: #f4f1fa;
+}
+
+select{ /*카테고리 선택*/
+    appearance: none;
+    width: 82.8%;
+    float:right;
+    margin-top: 13px;
+    padding: 12px;
+
+    border : 1px solid #aaa;
+    border-radius: 10px;
+
+    font-family: myfont;
+    font-size: 16px;
+}
+
+select:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px #c4bbd3;
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+  }
+
+/*직거래 여부*/
+
+fieldset{
+    border: none;
+    margin : 25px 0 0 0px;
+    font-size: 18px;
+    padding: 0;
+    width: 82.8%;
+    float:right;
+}
+
+.dealWayBt{
+    float:left;
+    width:33%;
+}
+
+.dealWayBt>input[type="radio"]:checked+label{
+    color: #8566FF;
+}
+
+/*상세내용*/
+
+textarea{
+    width: 80%;
+    float:right;
+    padding: 12px;
+    margin-top: 20px;
+
+    border : 1px solid #aaa;
+    border-radius: 10px;
+
+    font-family: myfont;
+    font-size: 16px;
+}
+
+
+/*제출 버튼*/
+button{
+    width: 40%;
+    height: 50px;    
+    margin: 50px 28% auto;
+
+    border: 0px;
+    border-radius: 50px;
+
+    background: #8566FF;
+    color: snow;
+
+    cursor: pointer;
+
+    font-size: 18px;
+    font-family: myfont;
+    letter-spacing: 0.2em;
+}
+
+button:hover{
+    background-color: #684cda;
+}
+
+

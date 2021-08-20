@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Login PAGE</title>
+</head>
+<body>
+    <div class="wrap">
+
+        <!--헤더(고정바)-->
+
+        <div class="bodyWrap">
+            <div class="logo"><img src="../picture/logo6.png" onclick=location.href='../../index.html'></div>
+            <form action="/login" method="POST">
+            <div class="infoInput">
+                <input type = "text" name = "username" placeholder = "ID"/>
+                <input type = "password" name = "password" placeholder = "PW"/>
+<!--                    <button>로그인</button><BR>-->
+<!--            </form>-->
+<!--                <input type="text" placeholder="ID">-->
+<!--                <input type="password" placeholder="PW">-->
+            </div>
+            <div th:if="${loginError}" th:text="아이디 또는 비밀번호를 확인해주세요" class="alert alert-danger" role="alert"></div>
+            <div class="loginWrap">
+                <button>로그인</button><BR>
+
+                <div class="signUpWrap">
+                    <span>리벤더의 회원이 아니신가요?</span>
+                    <div class="signUp"><a href="signUp.html">Sign Up</a></div>
+                </div>
+            </div></form>
+
+            <div class="oauthWrap">
+                <div class="oauthTitle">연동 로그인</div>
+                <div class="oauth">네이버</div>
+
+                <div class="oauth">
+                    <a href="/oauth2/authorization/google">구글</a>
+               </div>
+            </div>
+        </div>
+        <!--하단 footer-->
+    </div>
+</body>
+</html>

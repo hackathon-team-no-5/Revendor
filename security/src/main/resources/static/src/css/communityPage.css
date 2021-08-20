@@ -1,0 +1,273 @@
+/*폰트 및 기본 설정*/
+
+@font-face{
+	font-family: "myfont";
+	src: url('../font/NanumSquareR.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face{
+	font-family: "myfont";
+	src: url('../font/NanumSquareB.ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+/*검색창, 판매버튼 */
+
+.topWrap>ul>li:nth-child(4){
+	font-weight: bold;
+	border-bottom: 2px solid #8566FF;
+}
+
+.bodyTop{
+	margin-top: 115px;
+	width:940px;
+	height:60px;
+}
+
+.bodyInput{
+	width:940px;
+	height:60px;
+	margin-bottom: 35px;
+}
+
+.search{/*검색창*/
+	float:right;
+	width : 735px;
+	height : 50px;
+	border : 4px solid #8566FF;
+	border-radius: 50px;
+	margin-right: 20px;
+}
+
+.search>input{
+	margin : 5px 0 0 15px;
+	width: 650px;
+	height:30px;
+	outline:none;
+	border: 0px;
+	padding:5px;
+	font-family:myfont;
+	float:left;
+	font-size:16px;
+}
+
+.search>img {
+	width :35px;
+	cursor:pointer;
+	margin-top : 6.4px;
+}
+
+/*글쓰기*/
+.writeBt{
+	float:left;
+}
+.writeBt>input{
+	font-family:myfont;
+	font-size: 19px;
+	letter-spacing: 0.2em;
+	width: 155px;
+	height: 60px;
+	font-weight:600;
+	border:0px;
+	outline: none;
+	cursor: pointer;
+	border-radius: 50px;
+	color: snow;
+	background:#8566FF;
+}
+
+.writeBt>input:hover {
+	background: #5035bb;
+}
+
+
+.bodyMain{/*body wrap grid*/
+    display:grid;
+    grid-template-columns: 150px auto;
+    margin: 30px 0 30px 0;
+}
+
+
+/*카테고리*/
+
+.category{
+	text-align: center;
+	margin-top: 10px;
+    padding: 20px 0 10px 0;
+	background-color: #f6f5ff6e;
+	border: 1px dashed rgba(170, 170, 170, 0.486);
+	border-radius: 5px;
+	height: 205px;
+}
+
+.category>label{
+    font-size: 20px;
+    font-weight: 600;
+	border-bottom: 1px solid #aaa;
+}
+
+.category>ul{
+    margin-top: 30px;
+}
+
+.category>ul>li{
+    margin: 20px 0 20px 0;
+    font-size:18px;
+    letter-spacing: 0.3em;
+}
+
+.category>ul>li>a:hover{
+	color: #8566FF;
+	font-weight: bold;
+}
+
+
+/*본문 grid*/
+.contents{
+    display: grid;
+    row-gap: 30px;
+    padding: 30px;
+}
+
+/*본문 타이틀*/
+/* .contentsWrapTitle{
+    font-weight: 600;
+    font-size: 22px;
+    float:left;
+}
+
+.contentsWrapTitleDetail{
+    float:left;
+    margin: 5px 0 0 10px;
+    color: #505050;
+} */
+
+/* 카드 외형 설정*/
+/* .contentsCard{
+    padding: 30px 30px 10px 30px;
+    height: 200px;
+    border-radius: 30px;
+    box-shadow : 0px 7px 10px 0px #d5d3da;
+	transition: 0.3s ease;
+    font-size: 18px;
+
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+} */
+
+/*카드 제목*/
+
+/*.contentsTitle{
+    font-weight:600;
+    color:#8566FF;
+}
+ .contentsBottom{
+    border-top: 1px solid rgb(238, 232, 232);
+    padding-top: 13px;
+}
+
+.contentsCommentWrap{
+    cursor: pointer;
+	font-size: 17px;
+}
+
+.contentsCommentWrap>img{
+    width: 20px;
+    float:left;
+    margin-right: 7px;
+}
+
+.contentsComment{
+    float:left;
+    margin-right: 7px;
+}
+
+.contentsCommentNum{
+    float:left;
+}
+
+.contentsWriter{
+    float:right;
+    font-size: 16px;
+}
+
+.writerTitle{
+    float:left;
+    margin-right: 10px;
+    color: #505050;
+}
+
+.writerName{
+    float: right;
+} */
+
+/*게시판*/
+
+.communityBoard{
+	margin: 30px;
+}
+
+.communityTitle{
+	margin-bottom: 30px;
+}
+
+.communityTitle>span:nth-child(1){
+	font-weight: 600;
+	font-size:20px;
+	margin-right: 10px;
+}
+
+table{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.communityBoardTitle>tr>th{
+	text-align: center;
+	font-size: 18px;
+	padding: 10px;
+
+	border-top: 2px solid rgb(223, 211, 211);
+	border-bottom: 2px solid rgb(223, 211, 211);
+}
+
+.communityBoardContents{
+	text-align: center;
+}
+
+.communityBoardContents>tr:hover{
+	cursor: pointer;
+	background-color: #f5f4f8;
+}
+
+.communityBoardContents>tr:hover td:nth-child(2){
+	color: #6748e4;
+}
+
+.communityBoardContents>tr{
+	border-bottom: 1px solid #d5d3da;
+}
+
+.communityBoardContents>tr>td{
+	height: 30px;
+	padding: 5px 10px 5px 10px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+
+.communityBoardContents>tr>td:nth-child(2){ /*게시글 제목*/
+	text-align: left;
+	max-width: 380px;
+}
+
+.communityBoardContents>tr>td:nth-child(3){ /*게시글 작성자*/
+	max-width: 50px;
+}
+
+.communityBoardContents>tr>td:nth-child(4){ /*게시글 날짜*/
+	max-width: 100px;
+}
+

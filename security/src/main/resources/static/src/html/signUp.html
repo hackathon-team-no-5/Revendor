@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/signUp.css">
+    <link rel="stylesheet" href="../css/topBar.css">
+    <title>WebDesign</title>
+</head>
+<body>
+    <div class="wrap">
+
+        <!--헤더(고정바)-->
+        <div class="bodyWrap">
+            <div class="logo"><img src="../picture/logo6.png" onclick=location.href='../../index.html'></div>
+            <form action="/join" method="POST">
+                <div class="infoInputWrap">
+                    <div class="infoInput idInput">
+                        <span>아이디</span>
+                        <input type="text" name = "username" placeholder="ID">
+                    </div>
+                    <div class="infoInput pwInput">
+                        <span>비밀번호</span>
+                        <input type="password" name = "password" placeholder="PW">
+                    </div>
+<!--                    <div class="infoInput pw2Input">-->
+<!--                        <span>비밀번호 재확인</span>-->
+<!--                        <input type="password" name = "passwordck" placeholder="PW">-->
+<!--                    </div>-->
+                    <div class="infoInput nameInput">
+                        <span>이름</span>
+                        <input type="text" name = "userid" placeholder="이름">
+                    </div>
+                    <div class="infoInput emailInput">
+                        <span>이메일</span>
+                        <input type="email" name = "email" placeholder="이메일">
+                    </div>
+<!--                    <div class="infoInput birthInput">-->
+<!--                        <span>생년월일</span>-->
+<!--                        <input type="date" placeholder="생년월일" max="2015-01-01">-->
+<!--                    </div>-->
+                    <div class="infoInput telInput">
+                        <span>전화번호 (숫자만 입력하세요)</span>
+                        <input type="tel" name = "phone" placeholder="전화번호">
+                    </div>
+                </div>
+                <div class="loginWrap">
+                    <button>회원가입</button><BR>
+                </div>
+            </form>
+
+            <!-- <div class="oauthWrap">
+                <div class="oauthTitle">간편 회원가입</div>
+                <div class="oauth">네이버</div>
+                <div class="oauth">구글</div>
+            </div> -->
+        </div>
+
+        <!--하단 footer-->
+    </div>
+</body>
+</html>
