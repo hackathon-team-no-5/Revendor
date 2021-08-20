@@ -39,7 +39,7 @@ public class IndexController{
 
     @GetMapping("/loginForm")
     public String loginForm(){
-        return "loginForm";
+        return "../static/src/html/login";
     }
 
     @GetMapping("/joinForm")

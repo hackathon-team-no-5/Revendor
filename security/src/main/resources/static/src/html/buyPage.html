@@ -43,7 +43,7 @@
                 <div class="bodyInput">
                     <div class="search">
                         <input type="text" placeholder="찾으시는 물건이 있나요?">
-                        <img src="../picture/loupe.png">
+                        <img src="../picture/loupe.png" th:src="@{/src/picture/loupe.png}">
                     </div>
                     <!-- <div class="category">
                         <ul>
@@ -116,9 +116,9 @@
 
         <!--하단 footer-->
         <footer th:replace="fragments/common :: footer">
-                
+
         </footer>
-        
+
     </div>
 </body>
 

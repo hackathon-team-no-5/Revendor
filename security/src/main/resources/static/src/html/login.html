@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/login.css" th:href="@{/src/css/login.css}">
     <title>Login PAGE</title>
 </head>
 <body>
@@ -13,7 +13,8 @@
         <!--헤더(고정바)-->
 
         <div class="bodyWrap">
-            <div class="logo"><img src="../picture/logo6.png" onclick=location.href='../../index.html'></div>
+            <div class="logo"><img src="../picture/logo6.png" th:src="@{/src/picture/logo6.png}"
+                onclick=location.href='../../index.html' th:onclick="'location.href=\''+ @{/} + '\''"></div>
             <form action="/login" method="POST">
             <div class="infoInput">
                 <input type = "text" name = "username" placeholder = "ID"/>
@@ -29,7 +30,7 @@
 
                 <div class="signUpWrap">
                     <span>리벤더의 회원이 아니신가요?</span>
-                    <div class="signUp"><a href="signUp.html">Sign Up</a></div>
+                    <div class="signUp"><a href="signUp.html" th:href="@{/joinForm}">Sign Up</a></div>
                 </div>
             </div></form>
 
