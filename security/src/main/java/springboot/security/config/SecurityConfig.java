@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/loginForm")
 //                .usernameParameter("username")
                 .loginProcessingUrl("/login")//login 주소 호출 -> security
-                .defaultSuccessUrl("/login")
+                .defaultSuccessUrl("/")
                 .and()
                 .oauth2Login()
                 .loginPage("/loginForm")

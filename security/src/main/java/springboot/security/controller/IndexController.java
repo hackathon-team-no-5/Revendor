@@ -55,7 +55,8 @@ public class IndexController{
         String encPassword = bCryptPasswordEncoder.encode(rawPassword);
         user.setPassword(encPassword);
         userRepository.save(user);
-        return "redirect:/login";
+        return "redirect:/loginForm";
+//        return "redirect:@{/loginForm}";
     }
 //
 //    @GetMapping("/joinProc")
