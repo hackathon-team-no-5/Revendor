@@ -27,6 +27,11 @@ public class IndexController{
     @GetMapping("/user")
     public @ResponseBody String user(){ return "로그인 되었습니다.";  }
 
+    @GetMapping("/myPage")
+    public String myPage(){
+        return "../static/src/html/myPage";
+    }
+
     @GetMapping("/admin")
     public String admin(){
         return "admin";
@@ -56,7 +61,6 @@ public class IndexController{
         user.setPassword(encPassword);
         userRepository.save(user);
         return "redirect:/loginForm";
-//        return "redirect:@{/loginForm}";
     }
 //
 //    @GetMapping("/joinProc")
