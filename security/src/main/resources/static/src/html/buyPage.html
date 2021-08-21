@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/buyPage.css" th:href="@{/src/css/buyPage.css}">
     <link rel="stylesheet" href="../css/topBar.css" th:href="@{/src/css/topBar.css}">
+    <link rel="stylesheet" href="../css/itemCard.css" th:href="@{/src/css/itemCard.css}">
+    <link rel="stylesheet" href="../css/pageNum.css" th:href="@{/src/css/pageNum.css}">
     <title>WebDesign</title>
 
     <!--iframe 자동 사이즈 조절 script-->
@@ -69,48 +71,53 @@
                 </div>
 
             </div>
+            <div class="ItemWrap">
+                <div class="textBundle">
+                    <span class="textBundleTitle">💜고가 물품💜</span>
+                    <span class="textBundleSubtitle">이 상품은 어떠신가요?</span>
+                    <div class="luxuryTypeList">
+                        <ul>
+                            <li><button>가방</button></li>
+                            <li><button>지갑</button></li>
+                            <li><button>시계</button></li>
+                            <li><button>신발</button></li>
+                            <li><button>악세사리</button></li>
+                            <li><button>기타</button></li>
+                        </ul>
+                    </div>
+                </div>
 
-            <!--배경 이미지-->
-            <!-- <img class="mainImg" src="mainimg.png"> -->
+                
+                <!--스크롤 시 목록 계속 로딩되게...-->
+                <div class="cardBundle">
+                    <div class="itemCard" th:each="board : ${boards}">
+                        <!-- <a href="">구매하기</button> -->
+                        <img src="../picture/metamong.png" th:src="@{/src/picture/metamong.png}">
+                        <div class="itemText">
+                            <!-- <div class="itemType"><span>Luxury</span> / <span>가방</span></div> -->
+                            <span class="itemTitle" th:text="${board.title}">제목</span>
+                            <span class="itemPrice" th:text="${board.content}">9,000원</span>
+                        </div>
+                    </div>
+                    
+                </div>
 
-            <!--iframe-->
-            <div class="iframe">
-                <iframe id="iframe" name="iframe" 
-                    th:src="@{/board/list/test}"></iframe>
+                <div class="pageWrap">
+                    <ul class="page">
+                        <li><a href="/">1</a></li>
+                        <li><a href="/">2</a></li>
+                        <li><a href="/">3</a></li>
+                        <li><a href="/">4</a></li>
+                        <li><a href="/">5</a></li>
+                        <li><a href="/">6</a></li>
+                        <li><a href="/">7</a></li>
+                        <li><a href="/">8</a></li>
+                        <li><a href="/">9</a></li>
+                        <li><a href="/">10</a></li>
+                        <li><a href="/">Next</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <!--홈화면 카테고리 src-->
-            <script>
-                // var url = new URL(location.href);
-                // var param = url.searchParams.get("c");
-
-                // var iframe = document.getElementById("iframe");
-
-                // var luxury = document.getElementsByClassName("categoryChoose")[0].style;
-                // var nft = document.getElementsByClassName("categoryChoose")[1].style;
-                // var area = document.getElementsByClassName("categoryChoose")[2].style;
-
-                // switch (param) {
-                //     case "a":
-                //         iframe.src = "../html/luxuryItem.html";
-                //         break;
-                //     case "b":
-                //         iframe.src = '../html/nftItem.html';
-                //         break;
-                // }
-
-// < !--                // function listChoose(){-->
-// < !--                //     if(iframe.src="../html/luxuryItem.html"){-->
-// < !--                //         alert(1);-->
-// < !--                //         luxury.color='#8566FF';-->
-// < !--                //         luxury.fontWeight='600';-->
-// < !--                //     } else if(iframe.src="../html/nftItem.html") {-->
-// < !--                //         nft.color = '#8566FF';-->
-// < !--                //         nft.fontWeight = '600';-->
-// < !--                //     }-->
-// < !--                // }-->
-
-            </script>
 
         </div>
 

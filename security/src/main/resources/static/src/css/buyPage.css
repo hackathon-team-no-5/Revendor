@@ -28,7 +28,12 @@ body, html{
 	height: 100%;
 }
 
-.topWrap>ul>li:nth-child(2){
+ul{
+	list-style: none;
+	padding: 0;
+}
+
+.topWrap>ul>li:nth-child(2){/*카테고리에서 buy 선택*/
 	font-weight: bold;
 	border-bottom: 2px solid #8566FF;
 }
@@ -74,10 +79,6 @@ body, html{
 	margin-top : 7px;
 }
 
-
-/*카테고리*/
-
-
 /*카테고리*/
 .category{
 	border-top: 1px solid rgb(201, 191, 191);
@@ -88,12 +89,12 @@ body, html{
 	margin-top: 35px;
 }
 
-.category>ul{
+.category>label{
 	text-align:center;
 	margin: 15px 0 15px 0;
 }
 
-.category>ul>li{
+.category>label{
 	float:left;
 	text-align:center;
 	width: 33%;
@@ -102,184 +103,77 @@ body, html{
 	border-right: 1px dashed rgb(201, 191, 191);
 }
 
-.category>ul>li:nth-child(3){
+.category>label:nth-child(6){
 	border-right: none;
+	margin-top: -3px;
 }
 
-.category>ul>li>a{
+.category>label{
 	text-decoration-line: none;
 	color:black;
 	font-size:18px;
 }
 
-.category>ul>li>a:hover{
-	color:#8566FF;
-	font-weight: 600;
+/* 카테고리 라디오 버튼의 기본 둥근 아이콘을 제거 */
+input[type=radio].categoryChoose {
+	appearance: none;
 }
 
-
-/*drop down demo...*/
-/* .category{
-	border-top: 1px solid rgb(201, 191, 191);
-	border-bottom: 1px solid rgb(201, 191, 191);
-	width: 200px;
-	height: 40px;
-	margin: 5px 0 5px 0;
-	padding-bottom: 12px;
-	text-align: center;
+input[type=radio].categoryChoose:checked + label {
+	color: #8566FF;
+}
+	
+.categoryChooseLabel{
 	cursor: pointer;
-	float:right;
 }
-
-.category>ul{
-	margin-top: 15px;
-	font-size: 18px;
-	letter-spacing: 0.2em;
-}
-
-.category>ul>li>span{
-	position: relative;
-	color: rgb(122, 115, 115);
-}
-
-
-/*drop-down 카테고리*/
-/* .subCategory{
-	margin-top: 20px;
-	visibility: hidden;
-	opacity: 0;
-	transition: 0.2s ease-in-out;
-	background-color: white;
-}
-
-.subCategory>li{
-	padding: 10px 0 10px 0;
-	border-bottom: 1px dashed rgb(201, 191, 191);
-	color:rgb(122, 115, 115);
-	font-weight: bold;
-}
-
-.category>ul>li:hover .subCategory{
-	visibility: visible;
-	opacity: 1;
-}
-
-.subCategory>li>a:hover {
-	color:#8566FF;
-	transition: all 0.3s ease;
-} */
 
 /*iframe*/
 
-iframe{
+/* iframe{
 	margin: 10px 0px 50px 0;
 	height: 1620px;
 	width: 940px;
-}
+} */
 
 /*카드*/
-.featuredList{
-	float:left;
+
+.textBundle{ /*text 묶음*/
+	margin: 30px 0 10px 0 !important;
+	float: left;
+}
+
+.luxuryTypeList{ /*고가물품 분야 선택*/
+	width: 930px;
+	height: 50px;
+	font-size: 17px;
 	margin-top: 30px;
 }
-.textBundle{ /*카드 묶음*/
-	margin: 30px 0 40px 0;
-}
 
-.cardBundle{ /*카드 묶음 grid*/
-	display:grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repead(2, 1fr);
-	row-gap : 40px;
-	column-gap: 39px;
+.luxuryTypeList>ul>li{
 	float:left;
-	margin:0 0 60px 10px;
-}
-
-.textBundle>span:nth-child(1){ /*타이틀*/
-	font-weight: 600;
-	font-size:19px;
-	margin-right: 10px;
-}
-
-.textBundle>span:nth-child(2){ /*상세설명*/
-	color: #6d5c5c;
-	font-size:15px;
-}
-
-.textBundle>a{ /*더보기*/
-	color: #6d5c5c;
-	text-decoration-line: none;
-	font-size:16px;
-	float:right;
-}
-
-.textBundle>a:hover{
-	color: rgb(204, 47, 100);
-	transition: 0.3s ease;
-}
-
-
-/*아이템카드*/
-
-/* .itemCard>button{
-	position:absolute;
-	display : none;
-	padding: 10px;
-	font-size:17px;
-	background-color: #8566FF;
-	color:white;
-	border:0px;
-	cursor:pointer;
+	width : 10%;
+	margin-right: 12px;
+	text-align: center;
+	border: 1px dashed rgb(201, 191, 191);
 	border-radius: 5px;
-	box-shadow: 0 5px 5px -2px rgb(139, 139, 139);
-} */
+}
 
+.luxuryTypeList>ul>li>button{
+	width: 90px;
+	padding: 10px;
+	border: none;
 
-.itemCard{
-	width : 200px;
-	height: 285px;
-	border-radius: 10px;
+	font-family: myfont;
+	background-color: transparent;
 	cursor: pointer;
-	background: white;
-	box-shadow : 0px 7px 10px 0px #d5d3da;
-	transition: 0.3s ease;
-} 
-
-.itemCard:hover{
-	transform: translateY(10px);
-}
-/* 
-.itemCard:hover button{hover시 버튼
-	display: block;
-} */
-
-
-.itemCard>img{
-	width : 200px;
-	border-radius: 7px 7px 0 0;
-	margin: 0;
+	font-size: 17px;
 }
 
-.itemText{ /*물건 설명창*/
-	width: 180px;
-	padding : 10px;
+.luxuryTypeList>ul>li:hover{
+	background-color: #f6f5ff6e;
 }
 
-.itemTitle{/*제목*/
-	font-weight: 600;
-	float:left;
-	font-size : 17px;
-}
-
-.itemPrice{/*가격*/
-	float:left;
-	margin-top : 20px;
-	font-size : 18px;
-}
-
-.itemSeller{/*판매자 정보*/
-	float: right;
-	margin-top : 22px;
-	font-size: 14px;
+.luxuryTypeList>ul>li>button:hover{
+	font-weight: bold;
+	transition: all .3s ease;
 }
