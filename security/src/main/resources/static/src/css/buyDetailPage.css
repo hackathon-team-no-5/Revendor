@@ -1,0 +1,192 @@
+/*폰트 및 기본 설정*/
+
+@font-face{
+	font-family: "myfont";
+	src: url('../font/NanumSquareR.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face{
+	font-family: "myfont";
+	src: url('../font/NanumSquareB.ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+body, html{
+	height:100%;
+}
+.itemWrap{ /*페이지 윗 여백, grid 설정*/
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: 460px 1fr;
+}
+
+.itemImg{ /*좌측 큰 이미지*/
+    width: 400px;
+    margin: 20px;
+    border-radius: 10px;
+    border: 2px solid #d8d3da;
+}
+
+/*아이템 정보 텍스트*/
+
+.itemTextWrap{ /*윗 여백*/
+    padding: 30px 20px 50px 0;
+}
+
+.itemText{ /*전체 텍스트 여백*/
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.itemTitle{ /*아이템 제목*/
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.itemPrice{ /*가격*/
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #8566FF;
+}
+
+.itemDealWay>span:nth-child(1), .itemDealArea>span:nth-child(1){
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.itemSeller>span:nth-child(1){
+    letter-spacing: 0.5em;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/*버튼들*/
+.buttonWrap{
+    margin-top: 50px;
+}
+
+/*관심 버튼*/
+.heartBt{
+	float:left;
+}
+.heartBt{
+	width: 200px;
+	height: 60px;
+
+	font-family:myfont;
+	font-size: 19px;
+	letter-spacing: 0.2em;	
+	font-weight:600;
+
+	border:0px;
+	border-radius: 50px;
+	outline: none;
+	cursor: pointer;
+
+	color: #5035bb;
+	background:#d5caff;
+}
+
+.heartBt:hover {
+	background: #ccc0ff;
+}
+/*구매 버튼*/
+.buyBt{
+	float:right;
+}
+.buyBt{
+	width: 240px;
+	height: 60px;
+
+	font-family:myfont;
+	font-size: 19px;
+	letter-spacing: 0.4em;	
+	font-weight:600;
+
+	border:0px;
+	border-radius: 50px;
+	outline: none;
+	cursor: pointer;
+
+	color: snow;
+	background:#8566FF;
+}
+
+.buyBt:hover {
+	background: #5035bb;
+}
+
+
+/*상세설명*/
+
+.itemDetail{
+    padding: 45px 0 100px 20px;
+    border-top: 1px dashed #d8d3da;
+    
+}
+
+.detailTitle, .otherItemTitle{/*제목*/
+    font-size : 25px;
+    font-weight: bold;
+}
+
+.detailContents{
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+/*다른 상품 보기*/
+
+.otherItem{
+    border-top: 1px solid #d8d3da;
+    padding: 20px 20px 45px 20px;
+}
+
+.otherItemTitle{
+    float: left;
+}
+
+.otherItemMore{
+    cursor: pointer;
+    float:right;
+    padding-top: 20px;
+}
+
+.otherItemList{
+    float:left;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    height: 250px;
+    margin-bottom: 30px;
+}
+
+.otherItemListCard{
+    text-align: center;
+}
+
+.otherItemListCard>img{ /*이미지*/
+    width: 150px;
+    border-radius: 10px;
+}
+
+.otherItemListCardTitle{
+    width: 170px;
+    font-size:18px;
+    font-weight: bold;
+    margin-top: 10px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+
+.otherItemListCardPrice{
+    margin-top: 10px;
+    font-size: 20px;
+}
