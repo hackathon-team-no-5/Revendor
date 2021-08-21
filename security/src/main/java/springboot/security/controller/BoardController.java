@@ -25,7 +25,7 @@ public class BoardController {
     public String list(Model model, @PageableDefault(size = 10) Pageable pageable,
                        @RequestParam(required = false, defaultValue = "") String searchText) {
 //        Page<Board> boards = boardRepository.findAll(pageable);
-        Page<Board> boards = boardRepository.findByTitleContainingOrContentContaining(searchText, searchText, pageable);
+        Page<Board> boards = boardRepository.findByTitleContaining(searchText, pageable);
         int startPage = Math.max(1, boards.getPageable().getPageNumber() - 4);
         int endPage = Math.min(boards.getTotalPages(), boards.getPageable().getPageNumber() + 4);
 
@@ -36,25 +36,25 @@ public class BoardController {
         for (Board b : boards) {
             System.out.println("id: " + b.getId());
             System.out.println(" title: " + b.getTitle());
-            System.out.println(" content: " + b.getContent());
+            System.out.println(" price: " + b.getPrice());
 
         }
         return "../static/src/html/buyPage";
     }
 
-    @GetMapping("/list/test")
-    public String listTest(Model model, @PageableDefault(size = 10) Pageable pageable,
-                       @RequestParam(required = false, defaultValue = "") String searchText) {
-//        Page<Board> boards = boardRepository.findAll(pageable);
-        Page<Board> boards = boardRepository.findByTitleContainingOrContentContaining(searchText, searchText, pageable);
-        int startPage = Math.max(1, boards.getPageable().getPageNumber() - 4);
-        int endPage = Math.min(boards.getTotalPages(), boards.getPageable().getPageNumber() + 4);
-
-        model.addAttribute("startPage", startPage);
-        model.addAttribute("endPage", endPage);
-        model.addAttribute("boards", boards);
-        return "../static/src/html/luxuryItem";
-    }
+//    @GetMapping("/list/test")
+//    public String listTest(Model model, @PageableDefault(size = 10) Pageable pageable,
+//                       @RequestParam(required = false, defaultValue = "") String searchText) {
+////        Page<Board> boards = boardRepository.findAll(pageable);
+//        Page<Board> boards = boardRepository.findByTitleContainingOrContentContaining(searchText, searchText, pageable);
+//        int startPage = Math.max(1, boards.getPageable().getPageNumber() - 4);
+//        int endPage = Math.min(boards.getTotalPages(), boards.getPageable().getPageNumber() + 4);
+//
+//        model.addAttribute("startPage", startPage);
+//        model.addAttribute("endPage", endPage);
+//        model.addAttribute("boards", boards);
+//        return "../static/src/html/luxuryItem";
+//    }
 
     @GetMapping("/form")
     public String form(Model model, @RequestParam(required = false) Long id) {
@@ -64,7 +64,7 @@ public class BoardController {
             Board board = boardRepository.findById(id).orElse(null);
             model.addAttribute("board", board);
         }
-        return "board/form";
+        return "../static/src/html/sellPage";
     }
 
     @PostMapping("/form")

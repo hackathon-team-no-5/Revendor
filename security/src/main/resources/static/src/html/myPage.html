@@ -1,37 +1,28 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="en">
+
+=======
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+>>>>>>> de379e714c822c41838ffa178326ae0b3e1e1dd7
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/mypage.css">
-    <link rel="stylesheet" href="../css/topBar.css">
+    <link rel="stylesheet" href="../css/mypage.css" th:href="@{/src/css/mypage.css}">
+    <link rel="stylesheet" href="../css/topBar.css" th:href="@{/src/css/topBar.css}">
     <title>WebDesign</title>
-    
+
 </head>
+
 <body>
     <!--배경 꾸미기 용-->
     <div class="backgroundColor"></div>
+
     <div class="wrap">
         <!--헤더(고정바)-->
-        <div class="headerWrap">
-            <div class="headerNavWrap">
-                <!---로고-->
-                <header class="logoWrap">
-                    <img onclick=location.href='index.html' class="logoImg" src="../picture/logo6.png">
-                </header>
-                <!--메뉴 리스트-->
-                <nav class="topWrap">
-                    <ul>
-                        <li><a href="../../index.html">home</a></li>
-                        <li><a href="buyPage.html">buy</a></li>
-                        <li><a href="sellPage.html">sell</a></li>
-                        <li><a href="communityPage.html">community</a></li>
-                        <li><a href="login.html">log in</a></li>
-                        <li><a href="mypage.html">my page</a></li>
-                    </ul>
-                </nav>
-            </div>
+        <div class="headerWrap" th:replace="fragments/common :: menu('myPage')">
+
         </div>
 
         <!--본문-->
@@ -58,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="myInfoWrap">
                     <div class="myDeal">
                         <span>내 거래</span>
@@ -114,34 +105,18 @@
                     </div>
                 </div>
 
-                
+
             </div>
-                
+
 
             <!--하단 footer-->
-            <footer>
-                <div class="footerWrapper">
-                    <!--footer 왼편-->
-                    <div class="footerLeft">
-                        <div class="footerLogo">
-                            <img src="../picture/logo6.png">
-                        </div>
-                        <ul class="companyInfo">
-                            <li>(주)리벤더</li>
-                            <li>공동대표 : 김건, 김지우, 박민경, 백지연, 차형주</li>
-                            <br>
-                            <li>Copyright © (주)리벤더 All rights reserved. Designed & Programmed by ReVendor</li>
-                        </ul>
-                    </div>
-                    <!--footer 오른편-->
-                    <div class="footerRight">
-                        <a href="src/html/app.html">어플 다운받기</a>
-                    </div>
-                </div>
+            <footer th:replace="fragments/common :: footer">
+
             </footer>
 
         </div>
 
     </div>
 </body>
+
 </html>

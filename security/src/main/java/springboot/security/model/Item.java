@@ -17,7 +17,7 @@ public class Item {
     private Long id;
     @NotNull
     private String title;
-    private Long price;
+    private String price;
     private String location;
     private String url;
 
@@ -37,11 +37,11 @@ public class Item {
         this.title = title;
     }
 
-    public Long getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

@@ -17,9 +17,10 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    @Size(min=2, max=30)
     private String title;
-    private String content;
+    private String price;
+    private String location;
+    private String url;
 
     public Long getId() {
         return id;
@@ -37,11 +38,27 @@ public class Board {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public String getPrice() {
+        return price;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
