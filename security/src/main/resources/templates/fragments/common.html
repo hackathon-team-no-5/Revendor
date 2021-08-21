@@ -20,7 +20,7 @@
                     <li><a href="src/html/sellPage.html" th:href="@{/sell}">sell</a></li>
                     <li><a href="src/html/communityPage.html" th:href="@{/community}">my page</a></li>
                     <li><a sec:unauthorize="isAnonymous()" href="src/html/login.html" th:href="@{/loginForm}">log in</a></li>
-                    <li><a sec:authorize="isAuthenticated()" href="#" onclick="logout(event);">log out</a></li>
+                    <li><a sec:authorize="isAuthenticated()" href="#" th:href="@{/}" onclick="logout(event);">log out</a></li>
 <!--                    <p sec:authorize="isAuthenticated()">Click <a th:href="@{/logout}">log out</a> </p>-->
 <!--                    <li><a href="loginForm">log in</a></li>-->
                 </ul>

@@ -36,3 +36,20 @@ spring:
             scope:
               - email
               - profile
+
+#          naver:
+#            client-id: 9aIpYTIbH7GlWuvkLmbA
+#            client-secret: 7Rqxw2LKe8
+#            scope:
+#              - name
+#              - email
+#            client-name: Naver
+#            authorization-grant-type:authorization_code
+#            redirect-url: http://localhost:8080/login/oauth2/code/naver
+
+#            provider:
+#              naver:
+#                authorization-url: https://nid.naver.com/oauth2.0/authorize
+##                token-url:https://nid.naver.com/oatuh2.0/token
+#                user-info-url: https://openapi.naver.com/v1/nid/me
+##                user-name-attribute:response
