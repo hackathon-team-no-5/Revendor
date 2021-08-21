@@ -22,7 +22,7 @@ public class BoardController {
 
 
     @GetMapping("/list")
-    public String list(Model model, @PageableDefault(size = 2) Pageable pageable,
+    public String list(Model model, @PageableDefault(size = 10) Pageable pageable,
                        @RequestParam(required = false, defaultValue = "") String searchText) {
 //        Page<Board> boards = boardRepository.findAll(pageable);
         Page<Board> boards = boardRepository.findByTitleContainingOrContentContaining(searchText, searchText, pageable);
@@ -32,11 +32,18 @@ public class BoardController {
         model.addAttribute("startPage", startPage);
         model.addAttribute("endPage", endPage);
         model.addAttribute("boards", boards);
+        System.out.println("출력이 왜 안되나요?");
+        for (Board b : boards) {
+            System.out.println("id: " + b.getId());
+            System.out.println(" title: " + b.getTitle());
+            System.out.println(" content: " + b.getContent());
+
+        }
         return "../static/src/html/buyPage";
     }
 
     @GetMapping("/list/test")
-    public String listTest(Model model, @PageableDefault(size = 2) Pageable pageable,
+    public String listTest(Model model, @PageableDefault(size = 10) Pageable pageable,
                        @RequestParam(required = false, defaultValue = "") String searchText) {
 //        Page<Board> boards = boardRepository.findAll(pageable);
         Page<Board> boards = boardRepository.findByTitleContainingOrContentContaining(searchText, searchText, pageable);
