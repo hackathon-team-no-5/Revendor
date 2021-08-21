@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/sellPage.css">
-    <link rel="stylesheet" href="../css/topBar.css">
+    <link rel="stylesheet" href="../css/sellPage.css" th:href="@{/src/css/sellPage.css}">
+    <link rel="stylesheet" href="../css/topBar.css" th:href="@{/src/css/topBar.css}">
     <title>sellPage</title>
 
 </head>
@@ -48,7 +48,7 @@
 
                 <!--카테고리 선택-->
                 <!--수정 : 카테고리를 선택해주세요 선택 시 빠꾸...-->
-                <div class="inputBlank">
+                <!-- <div class="inputBlank">
                     <div class="labelText"><label for="category">카테고리</label></div>
                     <div class="categorySelect">
                         <select name="category" size="1">
@@ -57,17 +57,23 @@
                             <option value="NFT">NFT</option>
                         </select>
                     </div>
-                </div>
+                </div> -->
 
-                <!--제목-->
+                <!--가격-->
                 <div class="inputBlank">
                     <div class="labelText"><label for="name">가격</label></div>
-                    <input class="infoInput" id="name" type="number" name="price" placeholder="가격 입력" min="10"
+                    <input class="infoInput" id="name" type="number" name="price" placeholder="가격 입력" 
                         required><br>
                 </div>
 
+                 <!--지역-->
+                 <div class="inputBlank">
+                    <div class="labelText"><label for="name">지역</label></div>
+                    <input class="infoInput" id="name" type="text" name="location" placeholder="지역 입력" required><br>
+                </div>
+
                 <!--거래방법 선택-->
-                <div class="inputBlank">
+                <!-- <div class="inputBlank">
                     <div class="labelText"><label for="가격입력">거래방법</label></div>
                     <fieldset>
                         <div class="dealWayBt">
@@ -83,7 +89,7 @@
                             <label for="both">둘 다 가능 </label>
                         </div>
                     </fieldset>
-                </div>
+                </div> -->
 
                 <!--상세설명 텍스트-->
                 <div class="labelText"><label for="name">상세설명</label></div>
@@ -98,25 +104,9 @@
 
 
     </div>
-    <footer>
-        <div class="footerWrapper">
-            <!--footer 왼편-->
-            <div class="footerLeft">
-                <div class="footerLogo">
-                    <img src="../picture/logo6.png">
-                </div>
-                <ul class="companyInfo">
-                    <li>(주)리벤더</li>
-                    <li>공동대표 : 김건, 김지우, 박민경, 백지연, 차형주</li>
-                    <br>
-                    <li>Copyright © (주)리벤더 All rights reserved. Designed & Programmed by ReVendor</li>
-                </ul>
-            </div>
-            <!--footer 오른편-->
-            <div class="footerRight">
-                <a href="app.html">어플 다운받기</a>
-            </div>
-        </div>
+    <!--하단 footer-->
+    <footer th:replace="fragments/common :: footer">
+
     </footer>
 </body>
 

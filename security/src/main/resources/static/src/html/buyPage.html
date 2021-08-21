@@ -90,13 +90,14 @@
                 
                 <!--스크롤 시 목록 계속 로딩되게...-->
                 <div class="cardBundle">
-                    <div class="itemCard" th:each="board : ${boards}">
+                    <div class="itemCard" th:each="item : ${items}">
                         <!-- <a href="">구매하기</button> -->
-                        <img src="../picture/metamong.png" th:src="@{/src/picture/metamong.png}">
+                        <img src="https://dnvefa72aowie.cloudfront.net/origin/article/202107/0543c5018e96941bb95928e4a63028a6e4ec3322c467a0c680dfc49abe762ea4.webp?q=82&amp;s=300x300&amp;t=crop" 
+                            th:src="${item.url}">
                         <div class="itemText">
                             <!-- <div class="itemType"><span>Luxury</span> / <span>가방</span></div> -->
-                            <span class="itemTitle" th:text="${board.title}">제목</span>
-                            <span class="itemPrice" th:text="${board.content}">9,000원</span>
+                            <span class="itemTitle" th:text="${item.title}">제목</span>
+                            <span class="itemPrice" th:text="${item.price}">9,000원</span>
                         </div>
                     </div>
                     
@@ -104,17 +105,18 @@
 
                 <div class="pageWrap">
                     <ul class="page">
-                        <li><a href="/">1</a></li>
-                        <li><a href="/">2</a></li>
-                        <li><a href="/">3</a></li>
-                        <li><a href="/">4</a></li>
-                        <li><a href="/">5</a></li>
-                        <li><a href="/">6</a></li>
-                        <li><a href="/">7</a></li>
-                        <li><a href="/">8</a></li>
-                        <li><a href="/">9</a></li>
-                        <li><a href="/">10</a></li>
-                        <li><a href="/">Next</a></li>
+                        <li class="page-item" th:onclick="${1 == items.pageable.pageNumber + 1} ? 'return false'">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
+                            th:href="@{/board/list(page=${items.pageable.pageNumber - 1},searchText=${param.searchText})}">Previous</a>
+                          </li>
+                          <li class="page-item" th:onclick="${i == items.pageable.pageNumber + 1} ? 'return false'"
+                            th:each="i : ${#numbers.sequence(startPage, endPage)}">
+                              <a class="page-link" href="#" th:text="${i}"
+                              th:href="@{/board/list(page=${i - 1},searchText=${param.searchText})}">1</a></li>
+                          <li class="page-item" th:onclick="${items.totalPages == items.pageable.pageNumber + 1} ? 'return false'">
+                            <a class="page-link" href="#"
+                            th:href="@{/board/list(page=${items.pageable.pageNumber + 1},searchText=${param.searchText})}">Next</a>
+                          </li>
                     </ul>
                 </div>
             </div>
