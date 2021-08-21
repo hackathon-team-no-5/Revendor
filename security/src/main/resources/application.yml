@@ -14,14 +14,14 @@ spring:
     username: fintech5
     password: fintech5
 
-#  mvc:
-#    view:
-#      prefix: /templates/
-#      suffix: .mustache
+  #  mvc:
+  #    view:
+  #      prefix: /templates/
+  #      suffix: .mustache
 
   jpa:
     hibernate:
-      ddl-auto: update #create update none
+      ddl-auto: create #create update none
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
@@ -37,19 +37,20 @@ spring:
               - email
               - profile
 
-#          naver:
-#            client-id: 9aIpYTIbH7GlWuvkLmbA
-#            client-secret: 7Rqxw2LKe8
-#            scope:
-#              - name
-#              - email
-#            client-name: Naver
-#            authorization-grant-type:authorization_code
-#            redirect-url: http://localhost:8080/login/oauth2/code/naver
+          naver:
+            client-id: 9aIpYTIbH7GlWuvkLmbA
+            client-secret: 7Rqxw2LKe8
+            scope:
+              - name
+              - email
+            redirect-uri: http://localhost:8080/login/oauth2/code/naver
+#http://221.168.38.225:8080/login/oauth2/code/naver
+            authorization-grant-type: authorization_code
+            client-name: Naver
 
-#            provider:
-#              naver:
-#                authorization-url: https://nid.naver.com/oauth2.0/authorize
-##                token-url:https://nid.naver.com/oatuh2.0/token
-#                user-info-url: https://openapi.naver.com/v1/nid/me
-##                user-name-attribute:response
+        provider:
+          naver:
+            authorization-uri: https://nid.naver.com/oauth2.0/authorize
+            token_uri: https://nid.naver.com/oauth2.0/token
+            user-info-uri: https://openapi.naver.com/v1/nid/me
+            user-name-attribute: response
