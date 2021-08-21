@@ -18,18 +18,9 @@
                     <li><a href="index.html" th:href="@{/}">home</a></li>
                     <li><a href="src/html/buyPage.html" th:href="@{/item/list}">buy</a></li>
                     <li><a href="src/html/sellPage.html" th:href="@{/board/form}">sell</a></li>
-                    <li><a href="src/html/myPage.html" th:href="@{/user/info}">my page</a></li>
-                    <!-- <li><a href="src/html/communityPage.html" th:href="@{/community}">my page</a></li> -->
+                    <li><a href="src/html/myPage.html" th:href="@{/myPage}">my page</a></li>
                     <li><a sec:unauthorize="isAnonymous()" href="src/html/login.html" th:href="@{/loginForm}">log in</a></li>
-<<<<<<< HEAD
                     <li><a sec:authorize="isAuthenticated()" href="#" th:href="@{/}" onclick="logout(event);">log out</a></li>
-=======
-                    <li><a sec:authorize="isAuthenticated()" href="#" onclick="logout(event);">log out</a></li>
-<<<<<<< HEAD
-=======
->>>>>>> de379e714c822c41838ffa178326ae0b3e1e1dd7
->>>>>>> db31e774daf2614d2e57e8bf5fe448bb4d695aff
->>>>>>> 71733f804577d49bc081c01e4fb8af57c1ccab40
 <!--                    <p sec:authorize="isAuthenticated()">Click <a th:href="@{/logout}">log out</a> </p>-->
 <!--                    <li><a href="loginForm">log in</a></li>-->
                 </ul>
