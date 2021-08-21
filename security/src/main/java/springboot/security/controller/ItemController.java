@@ -23,23 +23,23 @@ public class ItemController {
     @GetMapping("/list")
     public String list(Model model, @PageableDefault(size = 20) Pageable pageable,
                        @RequestParam(required = false, defaultValue = "") String searchText) {
-//        Page<Board> boards = boardRepository.findAll(pageable);
-//        Page<Item> items = itemRepository.findByTitleContainingOrContentContaining(searchText, searchText, pageable);
-//        int startPage = Math.max(1, items.getPageable().getPageNumber() - 4);
-//        int endPage = Math.min(items.getTotalPages(), items.getPageable().getPageNumber() + 4);
-//
-//        model.addAttribute("startPage", startPage);
-//        model.addAttribute("endPage", endPage);
-//        model.addAttribute("boards", items);
-//        System.out.println("출력이 왜 안되나요?");
-//        for (Item b : items) {
-//            System.out.println("id: " + b.getId());
-//            System.out.println(" title: " + b.getTitle());
-//            System.out.println(" price: " + b.getPrice());
-//            System.out.println(" location: " + b.getLocation());
-//            System.out.println(" url: " + b.getUrl());
-//
-//        }
+//        Page<Board> boards = itemRepository.findAll(pageable);
+        Page<Item> items = itemRepository.findByTitleContaining(searchText, pageable);
+        int startPage = Math.max(1, items.getPageable().getPageNumber() - 4);
+        int endPage = Math.min(items.getTotalPages(), items.getPageable().getPageNumber() + 4);
+
+        model.addAttribute("startPage", startPage);
+        model.addAttribute("endPage", endPage);
+        model.addAttribute("items", items);
+        System.out.println("출력이 왜 안되나요?");
+        for (Item b : items) {
+            System.out.println("id: " + b.getId());
+            System.out.println(" title: " + b.getTitle());
+            System.out.println(" price: " + b.getPrice());
+            System.out.println(" location: " + b.getLocation());
+            System.out.println(" url: " + b.getUrl());
+
+        }
         return "../static/src/html/buyPage";
     }
 }
