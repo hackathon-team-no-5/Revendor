@@ -21,11 +21,7 @@ spring:
 
   jpa:
     hibernate:
-<<<<<<< HEAD
-      ddl-auto: update #create update none
-=======
       ddl-auto: none #create update none
->>>>>>> 449b6620de954ce9d95f580dce5570e39c7d163e
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
