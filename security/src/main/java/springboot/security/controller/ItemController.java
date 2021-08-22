@@ -61,4 +61,13 @@ public class ItemController {
         itemRepository.save(item);
         return "redirect:/item/list";
     }
+
+    @GetMapping("/detail")
+    public String detail(Model model, @RequestParam Long id) {
+
+        Item item = itemRepository.findById(id).orElse(null);
+        model.addAttribute("item", item);
+
+        return "../static/src/html/buyDetailPage";
+    }
 }
