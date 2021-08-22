@@ -33,16 +33,14 @@
             <input type="hidden" th:field="*{id}">
 
             <div class="infoWrap">
-                <!--사진 첨부-->
-                <!--기능 나중에 추가하기
-                      1. 사진 정방형 선택 후 미리보기 지원
-                      2. grid로 변경하기-->
+                
                 <div class="inputBlank">
                     <div class="labelText"><label for="picture">사진 첨부</label></div>
-                    <div class="picText"><label for="choosePic">👉Click Here</label></div>
+                    <div class="picText"><label for="choosePic">👉사진 첨부하기 (Click)</label></div>
                     <input id="choosePic" type="file">
-                    <p onclick="onSubmitImage()">변환 하기</p>
-                    <input id="imageLink" type="text" name="myphoto" th:field="*{url}"></input>
+
+                    <p class="submitChange" onclick="onSubmitImage()">👉URL 변환 하기</p>
+                    <input class="submitUrl" id="imageLink" type="text" name="myphoto" th:field="*{url}"></input>
                     <!--요거 할거면 method="post" 해주기. 원래 디폴트는 get방식이었음...-->
                 </div>
 
@@ -79,32 +77,6 @@
                     <input class="infoInput" id="name" type="text" name="location" placeholder="지역 입력"
                         th:field="*{location}" required><br>
                 </div>
-
-                <!--거래방법 선택-->
-                <!-- <div class="inputBlank">
-                    <div class="labelText"><label for="가격입력">거래방법</label></div>
-                    <fieldset>
-                        <div class="dealWayBt">
-                            <input class="directBt" id="direct" type="radio" value="직거래" name="dealWay">
-                            <label for="direct">직거래</label><br>
-                        </div>
-                        <div class="dealWayBt">
-                            <input class="parcelBt" id="parcel" type="radio" value="택배" name="dealWay">
-                            <label for="parcel">택배</label><br>
-                        </div>
-                        <div class="dealWayBt">
-                            <input class="bothBt" id="both" type="radio" value="둘다" name="dealWay">
-                            <label for="both">둘 다 가능 </label>
-                        </div>
-                    </fieldset>
-                </div> -->
-
-                <!--상세설명 텍스트-->
-                <!-- <div class="labelText"><label for="name">상세설명</label></div>
-                <div class="textareaWrap">
-                    <textarea name="detail" cols="50" rows="6" placeholder="물건에 대한 세부사항을 적어주세요! (구입시기, 파손여부 등...)"
-                        required></textarea><br>
-                </div> -->
 
                 <!--제출 버튼-->
                 <button id="upload">👉등록하기👈</button>
