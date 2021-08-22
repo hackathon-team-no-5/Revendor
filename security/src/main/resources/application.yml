@@ -21,7 +21,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: none #create update none
+      ddl-auto: update #create update none
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
@@ -43,8 +43,7 @@ spring:
             scope:
               - name
               - email
-            redirect-uri: http://localhost:8080/login/oauth2/code/naver
-#http://221.168.38.225:8080/login/oauth2/code/naver
+            redirect-uri: http://221.168.38.225:8080/login/oauth2/code/naver
             authorization-grant-type: authorization_code
             client-name: Naver
 
