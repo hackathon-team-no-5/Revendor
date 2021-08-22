@@ -26,14 +26,23 @@
             <!--검색창, 판매버튼-->
             <div class="bodyTop">
                 <div class="bodyInput">
-                    <div class="search">
-                        <input type="text" placeholder="찾으시는 물건이 있나요?">
-                        <img src="../picture/loupe.png" th:src="@{/src/picture/loupe.png}">
-                    </div>
+                    <!-- 검색 창 -->
+                    <form method="GET" th:action="@{/item/list}">
+                        <div class="bodyInput">
+                            <div class="search">
+                                <input type="text" id="searchText" name="searchText" placeholder="찾으시는 물건이 있나요?"
+                                    th:value="${param.searchText}">
+                                <button type="submit"><img src="src/picture/loupe.png"
+                                        th:src="@{/src/picture/loupe.png}"></button>
+                            </div>
+                        </div>
+
+                    </form>
 
                     <div class="category">
                         <ul>
-                            <li><a class="categoryChoose" href="../html/luxuryItem.html" target="iframe">👉고가 물품</a>
+                            <li><a class="categoryChoose" href="../html/luxuryItem.html" th:href="@{/item/list}"
+                                    target="iframe">👉고가 물품</a>
                             </li>
                             <li><a class="categoryChoose" href="../html/nftItem.html" target="iframe">👉NFT</a></li>
                             <li><a class="categoryChoose lastCategory" href="">👉지역별</a></li>
@@ -58,12 +67,12 @@
                     </div>
                 </div>
 
-                
+
                 <!--스크롤 시 목록 계속 로딩되게...-->
                 <div class="cardBundle">
                     <div class="itemCard" th:each="item : ${items}">
                         <!-- <a href="">구매하기</button> -->
-                        <img src="https://dnvefa72aowie.cloudfront.net/origin/article/202107/0543c5018e96941bb95928e4a63028a6e4ec3322c467a0c680dfc49abe762ea4.webp?q=82&amp;s=300x300&amp;t=crop" 
+                        <img src="https://dnvefa72aowie.cloudfront.net/origin/article/202107/0543c5018e96941bb95928e4a63028a6e4ec3322c467a0c680dfc49abe762ea4.webp?q=82&amp;s=300x300&amp;t=crop"
                             th:src="${item.url}">
                         <div class="itemText">
                             <!-- <div class="itemType"><span>Luxury</span> / <span>가방</span></div> -->
@@ -71,23 +80,25 @@
                             <span class="itemPrice" th:text="${item.price}">9,000원</span>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <div class="pageWrap">
                     <ul class="page">
                         <li class="page-item" th:onclick="${1 == items.pageable.pageNumber + 1} ? 'return false'">
                             <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
-                            th:href="@{/item/list(page=${items.pageable.pageNumber - 1},searchText=${param.searchText})}">Previous</a>
-                          </li>
-                          <li class="page-item" th:onclick="${i == items.pageable.pageNumber + 1} ? 'return false'"
+                                th:href="@{/item/list(page=${items.pageable.pageNumber - 1},searchText=${param.searchText})}">Previous</a>
+                        </li>
+                        <li class="page-item" th:onclick="${i == items.pageable.pageNumber + 1} ? 'return false'"
                             th:each="i : ${#numbers.sequence(startPage, endPage)}">
-                              <a class="page-link" href="#" th:text="${i}"
-                              th:href="@{/item/list(page=${i - 1},searchText=${param.searchText})}">1</a></li>
-                          <li class="page-item" th:onclick="${items.totalPages == items.pageable.pageNumber + 1} ? 'return false'">
+                            <a class="page-link" href="#" th:text="${i}"
+                                th:href="@{/item/list(page=${i - 1},searchText=${param.searchText})}">1</a>
+                        </li>
+                        <li class="page-item"
+                            th:onclick="${items.totalPages == items.pageable.pageNumber + 1} ? 'return false'">
                             <a class="page-link" href="#"
-                            th:href="@{/item/list(page=${items.pageable.pageNumber + 1},searchText=${param.searchText})}">Next</a>
-                          </li>
+                                th:href="@{/item/list(page=${items.pageable.pageNumber + 1},searchText=${param.searchText})}">Next</a>
+                        </li>
                     </ul>
                 </div>
             </div>
