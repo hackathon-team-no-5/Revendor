@@ -144,14 +144,14 @@
 
         $(document).ready(function () {
             var form = new FormData();
-            form.append("image", "/C:/apple.jpg");
-
+<!--            form.append("image", "/C:/apple.jpg");-->
+            form.append("image", "/Users/mgpark/Desktop/Screenshot 2021-08-22 at 11.00.11 AM.png");
             var settings = {
                 "url": "https://api.imgur.com/3/upload",
                 "method": "POST",
                 "timeout": 0,
                 "headers": {
-                    "Authorization": "Bearer 5eeae49394cd929e299785c8805bd168fc675280"
+                    "Authorization": "Client-ID 3c0605d41a784c3"
                 },
                 "processData": false,
                 "mimeType": "multipart/form-data",
