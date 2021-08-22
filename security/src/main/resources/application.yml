@@ -10,7 +10,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://221.168.38.225:3306/Revendor?serverTimezone=Asia/Seoul
+    url: jdbc:mysql://127.0.0.1:3306/Revendor?serverTimezone=Asia/Seoul
     username: fintech5
     password: fintech5
 

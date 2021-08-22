@@ -107,15 +107,15 @@
                     <ul class="page">
                         <li class="page-item" th:onclick="${1 == items.pageable.pageNumber + 1} ? 'return false'">
                             <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
-                            th:href="@{/board/list(page=${items.pageable.pageNumber - 1},searchText=${param.searchText})}">Previous</a>
+                            th:href="@{/item/list(page=${items.pageable.pageNumber - 1},searchText=${param.searchText})}">Previous</a>
                           </li>
                           <li class="page-item" th:onclick="${i == items.pageable.pageNumber + 1} ? 'return false'"
                             th:each="i : ${#numbers.sequence(startPage, endPage)}">
                               <a class="page-link" href="#" th:text="${i}"
-                              th:href="@{/board/list(page=${i - 1},searchText=${param.searchText})}">1</a></li>
+                              th:href="@{/item/list(page=${i - 1},searchText=${param.searchText})}">1</a></li>
                           <li class="page-item" th:onclick="${items.totalPages == items.pageable.pageNumber + 1} ? 'return false'">
                             <a class="page-link" href="#"
-                            th:href="@{/board/list(page=${items.pageable.pageNumber + 1},searchText=${param.searchText})}">Next</a>
+                            th:href="@{/item/list(page=${items.pageable.pageNumber + 1},searchText=${param.searchText})}">Next</a>
                           </li>
                     </ul>
                 </div>
