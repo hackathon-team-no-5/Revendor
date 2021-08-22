@@ -19,7 +19,7 @@ public class ItemController {
     private ItemRepository itemRepository;
 
     @GetMapping("/list")
-    public String list(Model model, @PageableDefault(size = 20) Pageable pageable,
+    public String list(Model model, @PageableDefault(size = 12) Pageable pageable,
                        @RequestParam(required = false, defaultValue = "") String searchText) {
 //        Page<Board> boards = itemRepository.findAll(pageable);
         Page<Item> items = itemRepository.findByTitleContaining(searchText, pageable);

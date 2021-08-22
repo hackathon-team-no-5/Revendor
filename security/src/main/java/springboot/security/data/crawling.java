@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 import java.util.Map;
-
+/*
 @SpringBootApplication
 public class crawling {
     public static void main(String[] args) {
@@ -26,3 +26,5 @@ public class crawling {
         list.forEach(System.out::println);
     }
 }
+
+ */
