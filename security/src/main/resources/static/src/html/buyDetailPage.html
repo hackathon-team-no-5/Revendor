@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/buyDetailPage.css">
-    <link rel="stylesheet" href="../css/topBar.css">
+    <link rel="stylesheet" href="../css/buyDetailPage.css" th:href="@{/src/css/buyDetailPage.css}">
+    <link rel="stylesheet" href="../css/topBar.css" th:href="@{/src/css/topBar.css}">
     <title>Revendor</title>
     
 </head>
 <body>
     <div class="wrap">
         <!--헤더(고정바)-->
-        <div class="headerWrap" th:replace="fragments/common :: menu('myPage')">
+        <div class="headerWrap" th:replace="fragments/common :: menu('buyDetailPage')">
 
         </div>
 
         <!--본문-->
-        <div class="bodyWrap">
+        <div class="bodyWrap">  
 
-            <div class="itemWrap">
+            <div class="itemWrap" th:object="${item}">
                 <!--아이템 좌측 이미지-->
-                <img class="itemImg" src="../picture/metamong.png">
+                <img class="itemImg" src="../picture/metamong.png" th:src="*{url}">
                 <!--아이템 우측 설명-->
                 <div class="itemTextWrap">
                     <!-- <div class="itemType itemText"><span>Luxury / 인형</span></div> -->
-                    <div class="itemTitle itemText">제 메타몽 좀 사주세요...</div><br>
-                    <div class="itemPrice itemText">9,000원</div><br>
+                    <div class="itemTitle itemText" th:text="*{title}">제 메타몽 좀 사주세요...</div><br>
+                    <div class="itemPrice itemText" th:text="*{price}">9,000원</div><br>
                     <!-- <div class="itemSeller itemText">
                         <span>판매자</span><span>핀테크씨</span><br>
                     </div>
@@ -34,7 +34,7 @@
                         <span>거래방법</span><span>직거래 / 택배</span><br>
                     </div> -->
                     <div class="itemDealArea itemText">
-                        <span>거래지역</span><span>서울시 강동구</span><br>
+                        <span>거래지역</span><span th:text="*{location}">서울시 강동구</span><br>
                     </div>
                     <!--관심, 구매 버튼-->
                     <div class="buttonWrap">

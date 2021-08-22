@@ -71,14 +71,16 @@
                 <!--스크롤 시 목록 계속 로딩되게...-->
                 <div class="cardBundle">
                     <div class="itemCard" th:each="item : ${items}">
-                        <!-- <a href="">구매하기</button> -->
-                        <img src="https://dnvefa72aowie.cloudfront.net/origin/article/202107/0543c5018e96941bb95928e4a63028a6e4ec3322c467a0c680dfc49abe762ea4.webp?q=82&amp;s=300x300&amp;t=crop"
-                            th:src="${item.url}">
-                        <div class="itemText">
-                            <!-- <div class="itemType"><span>Luxury</span> / <span>가방</span></div> -->
-                            <span class="itemTitle" th:text="${item.title}">제목</span>
-                            <span class="itemPrice" th:text="${item.price}">9,000원</span>
-                        </div>
+                        <a th:href="@{/item/detail(id=${item.id})}">
+                            <!-- <a href="">구매하기</button> -->
+                            <img src="https://dnvefa72aowie.cloudfront.net/origin/article/202107/0543c5018e96941bb95928e4a63028a6e4ec3322c467a0c680dfc49abe762ea4.webp?q=82&amp;s=300x300&amp;t=crop"
+                                th:src="${item.url}">
+                            <div class="itemText">
+                                <!-- <div class="itemType"><span>Luxury</span> / <span>가방</span></div> -->
+                                <span class="itemTitle" th:text="${item.title}">제목</span>
+                                <span class="itemPrice" th:text="${item.price}">9,000원</span>
+                            </div>
+                        </a>
                     </div>
 
                 </div>
