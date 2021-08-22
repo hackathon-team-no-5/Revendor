@@ -59,7 +59,7 @@
 	border-radius: 10px;
 	cursor: pointer;
 	background: white;
-	box-shadow : 0px 7px 10px 0px #d5d3da;
+	box-shadow : 0px 7px 10px -2px #d5d3da;
 	transition: 0.3s ease;
 } 
 
@@ -72,11 +72,12 @@
 } */
 
 
-.itemCard>img{
+.itemCard>a>img{
 	width : 200px;
 	height: 200px;
 	border-radius: 7px 7px 0 0;
 	margin: 0;
+	border-bottom: 1px solid #d5d3da;
 }
 
 .itemText{ /*물건 설명창*/
@@ -84,32 +85,24 @@
 	padding : 10px 10px 5px 10px;
 }
 
-.itemType{/*아이템 타입*/
-	text-align: left;
-	width: 180px;
-	float: left;
-	font-size: 14px;
-	margin-bottom: 5px;
-}
-
 .itemTitle{/*제목*/
 	font-weight: 600;
 	width: 180px;
 	float:left;
 	font-size : 17px;
+	margin-top: 10px;
 	overflow: hidden;
 	text-overflow:ellipsis;
 	white-space: nowrap;
 }
 
-.itemPrice{/*가격*/
+.itemPrice, .itemWon{/*가격*/
 	float:left;
-	width: 120px;
 	margin-top : 14px;
 	font-size : 18px;
 }
 
-.itemTitle, .itemType, .itemPrice{
+.itemTitle{
 	overflow: hidden;
 	text-overflow:ellipsis;
 	white-space: nowrap;

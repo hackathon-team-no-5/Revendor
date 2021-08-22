@@ -165,8 +165,76 @@ body, html{
 }
 
 
-/*추천항목*/
+/*거래 성사 바*/
+.showBar{
+	float: left;
+	width:940px;
+	height: 20px;
+	background-color: #F2EEFF;
+	border-radius:50px;
+	font-size: 18px;
+	padding: 10px 0 10px 0;
+	text-align: center;
+	margin: 0px 0 30px 0;
+	overflow: hidden;
+}
 
-.featuredList, .hotList{
-	float:left;
+.showBar ul {
+	animation: slide 20s infinite;
+}
+
+.showBar li {
+	padding: 10px 0 10px 0;
+}
+
+.showBar li:hover { 
+	animation-duration: 2s; animation-name: rainbowLink; animation-iteration-count: infinite; 
+} 
+
+/*무지개효과 ><*/
+@keyframes rainbowLink {     
+ 0% { color: #ff2a2a; }
+ 15% { color: #ff7a2a; }
+ 30% { color: #ebaf0d; }
+ 45% { color: #50bb42; }
+ 60% { color: #2a89ff; }
+ 75% { color: #202082; }
+ 90% { color: #6b2aff; } 
+ 100% { color: #e82aff; }
+}
+
+@keyframes slide { /*거래 성사 바 애니메이션*/
+	0% {
+		margin-top: 0;
+	}
+	10% {
+		margin-top: -10px;
+	}
+	20% {
+		margin-top: -50px;
+	}
+	30% {
+		margin-top: -50px;
+	}
+	40% {
+		margin-top: -90px;
+	}
+	50% {
+		margin-top: -90px;
+	}
+	60% {
+		margin-top: -130px;
+	}
+	70% {
+		margin-top: -130px;
+	}
+	80% {
+		margin-top: -170px;
+	}
+	90% {
+		margin-top: -170px;
+	}
+	100% {
+		margin-top: 0;
+	}
 }
