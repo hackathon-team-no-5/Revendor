@@ -8,11 +8,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/index.css" th:href="@{/src/css/index.css}">
-    <link rel="stylesheet" href="src/css/topBar.css" th:href="@{/src/css/topBar.css}">
-    <link rel="stylesheet" href="src/css/itemCard.css" th:href="@{/src/css/itemCard.css}">
+    <link rel="stylesheet" href="../static/src/css/index.css" th:href="@{/src/css/index.css}">
+    <link rel="stylesheet" href="../static/src/css/topBar.css" th:href="@{/src/css/topBar.css}">
+    <link rel="stylesheet" href="../static/src/css/itemCard.css" th:href="@{/src/css/itemCard.css}">
     <title>WebDesign</title>
-
 </head>
 
 <body>
@@ -41,6 +40,8 @@
                 <!--거래 성사 바-->
                 <div class="showBar">핀테크님이 서울시 강남구에서 안전하게 거래 완료!(거래번호 : u7845632489845x3)</div>
 
+                <img class="homeMain" src="src/picture/homeMain.png">
+
                 <div class="category">
                     <ul>
                         <li><a href="src/html/buyPage.html?c=a">👉고가 물품</a></li>
@@ -49,19 +50,13 @@
                     </ul>
                 </div>
 
-                <!-- <div class="searchList">
-                <span class="recentlySearch">최근 검색어</span>
-                <span>최근 검색어<a href="/">x</a></span>
-                <span>최근 검색어<a href="/">x</a></span>
-                <span>최근 검색어<a href="/">x</a></span>
-            </div> -->
             </div>
 
             <!--배경 이미지-->
             <img class="mainImg" src="src/picture/mainimg.png">
 
             <!--추천항목-->
-            <div class="featuredList">
+            <!-- <div class="featuredList">
                 <div class="textBundle">
                     <span>💜핀테크님을 위한 추천 항목💜</span>
                     <span>이 상품은 어떠신가요?</span>
@@ -69,7 +64,6 @@
                 </div>
                 <div class="cardBundle">
                     <div class="itemCard">
-                        <!-- <button>구매하기</button> -->
                         <img src="src/picture/metamong.png">
                         <div class="itemText">
                             <div class="itemType"><span>Luxury</span> / <span>가방</span></div>
@@ -102,7 +96,6 @@
                         </div>
                     </div>
                     <div class="itemCard">
-                        <!-- <button>구매하기</button> -->
                         <img src="src/picture/metamong.png">
                         <div class="itemText">
                             <div class="itemType"><span>Luxury</span> / <span>가방</span></div>
@@ -135,10 +128,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!--인기상품-->
-            <div class="hotList">
+            <!-- <div class="hotList">
                 <div class="textBundle">
                     <span>🔥인기 판매 항목🔥</span>
                     <span>많은 고객님들이 이 물건에 관심을 갖고 계세요!</span>
@@ -146,7 +139,6 @@
                 </div>
                 <div class="cardBundle">
                     <div class="itemCard">
-                        <!-- <button>구매하기</button> -->
                         <img src="src/picture/nft.jpg">
                         <div class="itemText">
                             <div class="itemType"><span>NFT</span> / <span>그림</span></div>
@@ -179,7 +171,6 @@
                         </div>
                     </div>
                     <div class="itemCard">
-                        <!-- <button>구매하기</button> -->
                         <img src="src/picture/nft.jpg">
                         <div class="itemText">
                             <div class="itemType"><span>NFT</span> / <span>그림</span></div>
@@ -212,7 +203,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!--하단 footer-->
             <footer th:replace="fragments/common :: footer">
