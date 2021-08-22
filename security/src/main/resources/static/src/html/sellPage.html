@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/sellPage.css" th:href="@{/src/css/sellPage.css}">
     <link rel="stylesheet" href="../css/topBar.css" th:href="@{/src/css/topBar.css}">
@@ -40,14 +40,16 @@
                 <div class="inputBlank">
                     <div class="labelText"><label for="picture">사진 첨부</label></div>
                     <div class="picText"><label for="choosePic">👉Click Here</label></div>
-                    <input id="choosePic" type="file" name="myphoto" th:field="*{url}">
+                    <input id="choosePic" type="file">
+                    <p onclick="onSubmitImage()">변환 하기</p>
+                    <input id="imageLink" type="text" name="myphoto" th:field="*{url}"></input>
                     <!--요거 할거면 method="post" 해주기. 원래 디폴트는 get방식이었음...-->
                 </div>
 
                 <!--제목-->
                 <div class="inputBlank">
                     <div class="labelText"><label for="name">글 제목</label></div>
-                    <input class="infoInput" id="name" type="text" name="title" placeholder="글 제목 입력"
+                    <input class="infoInput" id="title" type="text" name="title" placeholder="글 제목 입력"
                         th:field="*{title}" required><br>
                 </div>
 
@@ -67,7 +69,7 @@
                 <!--가격-->
                 <div class="inputBlank">
                     <div class="labelText"><label for="name">가격</label></div>
-                    <input class="infoInput" id="name" type="number" name="price" placeholder="가격 입력"
+                    <input class="infoInput" id="price" type="number" name="price" placeholder="가격 입력"
                         th:field="*{price}" required><br>
                 </div>
 
@@ -105,10 +107,9 @@
                 </div> -->
 
                 <!--제출 버튼-->
-                <button onclic="onSubmitImage()">👉등록하기👈</button>
+                <button id="upload">👉등록하기👈</button>
+            </div>
         </form>
-
-        <button id="upload">upload image</button>
     </div>
     <!--하단 footer-->
     <footer th:replace="fragments/common :: footer">
@@ -118,17 +119,16 @@
     <script type="text/javascript">
         function onSubmitImage() {
             var form = new FormData();
-            // const file_name = document.getElementById("choosePic").value;
-            // console.log(file_name);
-            // form.append("image", file_name);
-            form.append("image", "C:/~~");
+            const file_name = document.getElementById("choosePic").files[0];
+            console.log(file_name);
+            form.append("image", file_name);
 
             var settings = {
                 "url": "https://api.imgur.com/3/upload",
                 "method": "POST",
                 "timeout": 0,
                 "headers": {
-                    "Authorization": "Bearer 5eeae49394cd929e299785c8805bd168fc675280"
+                    "Authorization": "Client-ID 3c0605d41a784c3",
                 },
                 "processData": false,
                 "mimeType": "multipart/form-data",
@@ -137,15 +137,25 @@
             };
 
             $.ajax(settings).done(function (response) {
-                console.log(response);
+                console.log("response: " + response);
+                console.log(typeof (response));
+
+                var jsonResponse = JSON.parse(response);
+                console.log(typeof (jsonResponse));
+                console.log(jsonResponse);
+
+                console.log(jsonResponse.data);
+                console.log(typeof (jsonResponse.data));
+
+                console.log(jsonResponse.data.link);
+                console.log(typeof (jsonResponse.data.link));
+
+                $('#imageLink').val(jsonResponse.data.link);
             });
 
         }
-
-        $(document).ready(function () {
+        $("#upload").click(function () {
             var form = new FormData();
-<!--            form.append("image", "/C:/apple.jpg");-->
-            form.append("image", "/Users/mgpark/Desktop/Screenshot 2021-08-22 at 11.00.11 AM.png");
             var settings = {
                 "url": "https://api.imgur.com/3/upload",
                 "method": "POST",
@@ -159,11 +169,24 @@
                 "data": form
             };
 
-            $("#upload").click(function () {
-                $.ajax(settings).done(function (response) {
-                    console.log(response);
-                });
+
+            $.ajax(settings).done(function (response) {
+                console.log("response: " + response);
+                console.log(typeof (response));
+
+                var jsonResponse = JSON.parse(response);
+                console.log(typeof (jsonResponse));
+                console.log(jsonResponse);
+
+                console.log(jsonResponse.data);
+                console.log(typeof (jsonResponse.data));
+
+                console.log(jsonResponse.data.link);
+                console.log(typeof (jsonResponse.data.link));
+
+                $('#imageLink').val(jsonResponse.data.link);
             });
+
         });
     </script>
 </body>
