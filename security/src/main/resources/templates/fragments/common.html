@@ -19,8 +19,9 @@
                     <li><a href="src/html/buyPage.html" th:href="@{/item/list}">buy</a></li>
                     <li><a href="src/html/sellPage.html" th:href="@{/item/form}">sell</a></li>
                     <li><a href="src/html/myPage.html" th:href="@{/myPage}">my page</a></li>
-                    <li><a sec:unauthorize="isAnonymous()" href="src/html/login.html" th:href="@{/loginForm}">log in</a></li>
-                    <li><a sec:authorize="isAuthenticated()" href="#" th:href="@{/}" onclick="logout(event);">log out</a></li>
+<!--                    <li><sec:authorize access="isAnonymous()"><a href="${CONTEXT }/j_spring_security_check" th:href="@{/loginForm}">로그인</a></sec:authorize></li>-->
+                    <li><a sec:authorize="isAnonymous()" href="/doLogin" th:href="@{/loginForm}">log in</a></li>
+                    <li><a sec:authorize="isAuthenticated()" href="/doLogout" th:href="@{/doLogout}">log out</a></li>
 <!--                    <p sec:authorize="isAuthenticated()">Click <a th:href="@{/logout}">log out</a> </p>-->
 <!--                    <li><a href="loginForm">log in</a></li>-->
                 </ul>

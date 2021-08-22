@@ -34,15 +34,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()
-                .loginPage("/loginForm")
+                    .loginPage("/loginForm")
 //                .usernameParameter("username")
-                .loginProcessingUrl("/login")//login 주소 호출 -> security
-                .defaultSuccessUrl("/")
+                    .loginProcessingUrl("/login")//login 주소 호출 -> security
+                    .defaultSuccessUrl("/")
+                    .and()
+                .logout()
+                    .logoutUrl("/doLogout")
+                    .logoutSuccessUrl("/loginForm")
                 .and()
                 .oauth2Login()
                 .loginPage("/loginForm")
                 .userInfoEndpoint()
-                .userService(principalOauth2UserService);
+                .userService(principalOauth2UserService)
+                .and();
         // 구글 로그인이 완료된 후의 후처리 필요 -> TIP. no code (access token + user profile info)
         // 1. receive code(certification) 2. access token(authorization) 3. user profile
         // 4-1. automatic sign-up 4-2. (email, phone, name, id) shoppingmall -> (address), mall -> (vip, general)
