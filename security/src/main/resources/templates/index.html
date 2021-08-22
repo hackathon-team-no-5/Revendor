@@ -28,21 +28,21 @@
             <!--검색창, 판매버튼, 거래성사바, 카테고리-->
             <div class="bodyTop">
                 <!-- 검색 창 -->
-                <form method="GET" th:action="@{/item/list}">
-                    <div class="bodyInput">
+                <div class="bodyInput">
+                    <form method="GET" th:action="@{/item/list}">
                         <div class="search">
                             <input type="text" id="searchText" name="searchText" placeholder="찾으시는 물건이 있나요?"
                                 th:value="${param.searchText}">
-                            <button type="submit"><img src="src/picture/loupe.png"
+                            <button type="submit"><img class="searchImg" src="src/picture/loupe.png"
                                     th:src="@{/src/picture/loupe.png}"></button>
+                            
                         </div>
-                    </div>
-
-                </form>
-                <!-- 판매 버튼 -->
-                <div class="sellBt">
+                    </form>
+                    <!-- 판매 버튼 -->
+                    <div class="sellBt">
                     <input onClick="location.href='src/html/sellPage.html'"
                         th:onclick="'location.href=\''+ @{/item/form} + '\''" type="button" value="판매하기">
+                    </div>
                 </div>
 
                 <!-- <div class="bodyInput">
