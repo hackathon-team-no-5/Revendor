@@ -11,23 +11,6 @@
     <link rel="stylesheet" href="../css/pageNum.css" th:href="@{/src/css/pageNum.css}">
     <title>WebDesign</title>
 
-    <!--iframe 자동 사이즈 조절 script-->
-    <!-- <script language="JavaScript">
-    function autoResize(obj){
-        var newheight;
-        var newwidth;
-
-        if(obj.contentDocument){
-            newheight = obj.contentDocument.documentElement.scrollHeight+30;
-            newwidth = obj.contentDocument.documentElement.scrollWidth+30;
-            } else { newheight=obj.contentWindow.document.body.scrollHeight+30;
-            newwidth=obj.contentWindow.document.body.scrollWidth+30;
-            }
-            obj.height= newheight + "px";
-            obj.width= newwidth + "px";
-         }
-    </script> -->
-
 </head>
 
 <body>
@@ -53,7 +36,7 @@
                             <li><a class="categoryChoose" href="../html/luxuryItem.html" target="iframe">👉고가 물품</a>
                             </li>
                             <li><a class="categoryChoose" href="../html/nftItem.html" target="iframe">👉NFT</a></li>
-                            <li><a class="categoryChoose" href="">👉지역별</a></li>
+                            <li><a class="categoryChoose lastCategory" href="">👉지역별</a></li>
                         </ul>
                     </div>
                 </div>

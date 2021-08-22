@@ -89,30 +89,28 @@ ul{
 	margin-top: 35px;
 }
 
-.category>label{
+.categoryChoose{
 	text-align:center;
 	margin: 15px 0 15px 0;
 }
 
-.category>label{
+.categoryChoose{
+	text-decoration-line: none;
+	color:black;
+	font-size:18px;
+	line-height: 30px;
+
 	float:left;
 	text-align:center;
 	width: 33%;
 	height: 30px;
-	line-height: 30px;
 	border-right: 1px dashed rgb(201, 191, 191);
 }
 
-.category>label:nth-child(6){
+.lastCategory{
 	border-right: none;
-	margin-top: -3px;
 }
 
-.category>label{
-	text-decoration-line: none;
-	color:black;
-	font-size:18px;
-}
 
 /* 카테고리 라디오 버튼의 기본 둥근 아이콘을 제거 */
 input[type=radio].categoryChoose {

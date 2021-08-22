@@ -7,17 +7,24 @@ a{
 
 /*페이지 넘기기*/
 .pageWrap{
+	width: 940px;
+	text-align: center;
+	height: 20px;
+	float:left;
 	margin-top: 60px;
 	font-size: 17px;
 }
 
 .page{
-    margin: 0 auto;
-	width: 420px;
+	display: inline-block;
 	height: 20px;
 	list-style: none;
 }
 .page>li{
+	padding: 0 10px 0 10px;
 	float:left;
-	margin: 0 10px 0 10px;
+}
+
+.page-link:hover{
+	text-decoration-line: underline;
 }

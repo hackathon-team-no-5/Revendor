@@ -48,6 +48,13 @@ a{
     box-shadow : 0px 7px 10px 0px #d8d3da;
 }
 
+@media screen and (max-height: 730px) {
+    .bodyWrap{
+        margin-top: 4%;
+    }
+    
+}
+
 .logo>img{
     width:370px;
     cursor:pointer;

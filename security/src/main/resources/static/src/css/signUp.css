@@ -28,13 +28,13 @@ body{
 .bodyWrap{
     font-family: 'myfont';
     margin: 0 auto;
-    margin-top: 3%;
+    margin-top: 9%;
     padding: 30px 30px 10px 30px;
 
     width: 480px;
     display:grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 6.5fr;
+    grid-template-rows: 1fr 5fr;
     place-content: center;
     place-items:center;
 
@@ -43,15 +43,20 @@ body{
     box-shadow : 0px 7px 10px 0px #d8d3da;
 }
 
+@media screen and (max-height: 730px) {
+    .bodyWrap{
+        margin-top: 3.5%;
+    }
+    
+}
+
 /*로고*/
 .logo>img{
     width:370px;
+    margin: 10px 0 10px 0;
     cursor:pointer;
 }
 
-.logo{
-    margin-bottom: 10px;
-}
 
 /*입력 창*/
 .infoInput{
