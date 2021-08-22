@@ -44,8 +44,9 @@
                             <li><a class="categoryChoose" href="../html/luxuryItem.html" th:href="@{/item/list}"
                                     target="iframe">👉고가 물품</a>
                             </li>
-                            <li><a class="categoryChoose" href="../html/nftItem.html" target="iframe">👉NFT</a></li>
-                            <li><a class="categoryChoose lastCategory" href="">👉지역별</a></li>
+                            <li><a class="categoryChoose" href="../html/nftItem.html" th:href="@{/}"
+                                    target="iframe">👉NFT</a></li>
+                            <li><a class="categoryChoose lastCategory" href="" th:href="@{/}">👉지역별</a></li>
                         </ul>
                     </div>
                 </div>
@@ -78,7 +79,7 @@
                             <div class="itemText">
                                 <!-- <div class="itemType"><span>Luxury</span> / <span>가방</span></div> -->
                                 <span class="itemTitle" th:text="${item.title}">제목</span>
-                                <span class="itemPrice" th:text="${item.price}">9,000</span><span class="itemWon">원</span>
+                                <span class="itemPrice" th:text="${item.price}">9,000</span>
 
                             </div>
                         </a>
