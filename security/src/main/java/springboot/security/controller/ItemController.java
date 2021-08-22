@@ -6,9 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import springboot.security.model.Board;
 import springboot.security.model.Item;
 import springboot.security.repository.ItemRepository;
@@ -41,5 +39,26 @@ public class ItemController {
 
         }
         return "../static/src/html/buyPage";
+    }
+
+    @GetMapping("/form")
+    public String form(Model model, @RequestParam(required = false) Long id) {
+        if (id == null) {
+            model.addAttribute("item", new Item());
+        } else {
+            Item item = itemRepository.findById(id).orElse(null);
+            model.addAttribute("item", item);
+        }
+        return "../static/src/html/sellPage";
+    }
+
+    @PostMapping("/form")
+    public String submitForm(@ModelAttribute Item item) {
+//        boardValidator.validate(board, bindingResult);
+//        if (bindingResult.hasErrors()) {
+//            return "board/form";
+//        }
+        itemRepository.save(item);
+        return "redirect:/item/list";
     }
 }

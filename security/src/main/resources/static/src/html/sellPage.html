@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/sellPage.css" th:href="@{/src/css/sellPage.css}">
     <link rel="stylesheet" href="../css/topBar.css" th:href="@{/src/css/topBar.css}">
@@ -25,8 +26,11 @@
         </div>
 
 
-        <form action="a.jsp" method="POST">
+        <form action="a.jsp" th:action="@{/item/form}" th:object="${item}" method="POST">
             <!--querystring 얘가 post(body)로 가면 url에 안뜸!! method 설정 안하면 header로 가서 url에 다 뜸...-->
+
+            <!-- id 값을 hidden을 이용해 설정 -->
+            <input type="hidden" th:field="*{id}">
 
             <div class="infoWrap">
                 <!--사진 첨부-->
@@ -36,14 +40,15 @@
                 <div class="inputBlank">
                     <div class="labelText"><label for="picture">사진 첨부</label></div>
                     <div class="picText"><label for="choosePic">👉Click Here</label></div>
-                    <input id="choosePic" type="file" name="myphoto">
+                    <input id="choosePic" type="file" name="myphoto" th:field="*{url}">
                     <!--요거 할거면 method="post" 해주기. 원래 디폴트는 get방식이었음...-->
                 </div>
 
                 <!--제목-->
                 <div class="inputBlank">
                     <div class="labelText"><label for="name">글 제목</label></div>
-                    <input class="infoInput" id="name" type="text" name="title" placeholder="글 제목 입력" required><br>
+                    <input class="infoInput" id="name" type="text" name="title" placeholder="글 제목 입력"
+                        th:field="*{title}" required><br>
                 </div>
 
                 <!--카테고리 선택-->
@@ -62,14 +67,15 @@
                 <!--가격-->
                 <div class="inputBlank">
                     <div class="labelText"><label for="name">가격</label></div>
-                    <input class="infoInput" id="name" type="number" name="price" placeholder="가격 입력" 
-                        required><br>
+                    <input class="infoInput" id="name" type="number" name="price" placeholder="가격 입력"
+                        th:field="*{price}" required><br>
                 </div>
 
-                 <!--지역-->
-                 <div class="inputBlank">
+                <!--지역-->
+                <div class="inputBlank">
                     <div class="labelText"><label for="name">지역</label></div>
-                    <input class="infoInput" id="name" type="text" name="location" placeholder="지역 입력" required><br>
+                    <input class="infoInput" id="name" type="text" name="location" placeholder="지역 입력"
+                        th:field="*{location}" required><br>
                 </div>
 
                 <!--거래방법 선택-->
@@ -92,22 +98,74 @@
                 </div> -->
 
                 <!--상세설명 텍스트-->
-                <div class="labelText"><label for="name">상세설명</label></div>
+                <!-- <div class="labelText"><label for="name">상세설명</label></div>
                 <div class="textareaWrap">
                     <textarea name="detail" cols="50" rows="6" placeholder="물건에 대한 세부사항을 적어주세요! (구입시기, 파손여부 등...)"
                         required></textarea><br>
-                </div>
+                </div> -->
 
                 <!--제출 버튼-->
-                <button>👉등록하기👈</button>
+                <button onclic="onSubmitImage()">👉등록하기👈</button>
         </form>
 
-
+        <button id="upload">upload image</button>
     </div>
     <!--하단 footer-->
     <footer th:replace="fragments/common :: footer">
 
     </footer>
+
+    <script type="text/javascript">
+        function onSubmitImage() {
+            var form = new FormData();
+            // const file_name = document.getElementById("choosePic").value;
+            // console.log(file_name);
+            // form.append("image", file_name);
+            form.append("image", "C:/~~");
+
+            var settings = {
+                "url": "https://api.imgur.com/3/upload",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer 5eeae49394cd929e299785c8805bd168fc675280"
+                },
+                "processData": false,
+                "mimeType": "multipart/form-data",
+                "contentType": false,
+                "data": form
+            };
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });
+
+        }
+
+        $(document).ready(function () {
+            var form = new FormData();
+            form.append("image", "/C:/apple.jpg");
+
+            var settings = {
+                "url": "https://api.imgur.com/3/upload",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer 5eeae49394cd929e299785c8805bd168fc675280"
+                },
+                "processData": false,
+                "mimeType": "multipart/form-data",
+                "contentType": false,
+                "data": form
+            };
+
+            $("#upload").click(function () {
+                $.ajax(settings).done(function (response) {
+                    console.log(response);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
