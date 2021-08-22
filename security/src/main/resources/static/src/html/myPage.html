@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/mypage.css" th:href="@{/src/css/mypage.css}">
     <link rel="stylesheet" href="../css/topBar.css" th:href="@{/src/css/topBar.css}">
-    <title>WebDesign</title>
+    <title>Revendor</title>
 
 </head>
 
@@ -27,18 +27,19 @@
             <div class="mypageWrap">
                 <div class="myProfileWrap">
                     <div class="myProfile">
-                        <img src="../picture/profile.jpg">
+                        <!-- <img src="../picture/profile.jpg"> -->
                         <div class="myProfileInfo">
-                            <span>👨‍👧‍👦 </span><span>한소희</span>
-                            <span>soheeHan</span><br><br>
-                            <span>🏠 </span><span>서울시 강남구</span><br><br><br>
+                            <span>👨‍👧‍👦 </span><span>한소희</span><br><br>
+                            <span>soheeHan@naver.com</span><br><br>
+                            <!-- <span>🏠 </span><span>서울시 강남구</span><br><br><br> -->
+                            <br><br><br>
                             <a href="/">내 정보 수정</a>
                         </div>
 
                         <div class="myItem">
                             <div class="myWallet">
                                 <span>내 지갑</span>
-                                <img src="../picture/qrcode.png">
+                                <img src="../picture/qrcode.png" th:src="@{/src/picture/qrcode.png}">
                                 <span>지갑 번호</span>
                                 <span>123ljkLKJlJGjlKJHlKUBB454u</span>
                             </div>
@@ -51,19 +52,19 @@
                         <span>내 거래</span>
                         <div class="myDealWrap">
                             <div class="myBuying">
-                                <img src="../picture/bill.png"><br>
+                                <img src="../picture/bill.png" th:src="@{/src/picture/bill.png}"><br>
                                 <span class="myDealText">판매내역</span><br>
-                                <span class="myDealNum">6</span>
+                                <span class="myDealNum">0</span>
                             </div>
                             <div class="mySelling">
-                                <img src="../picture/cart.png"><br>
+                                <img src="../picture/cart.png" th:src="@{/src/picture/cart.png}"><br>
                                 <span class="myDealText">구매내역</span><br>
-                                <span class="myDealNum">3</span>
+                                <span class="myDealNum">0</span>
                             </div>
                             <div class="myBasket">
-                                <img src="../picture/heart.png"><br>
+                                <img src="../picture/heart.png" th:src="@{/src/picture/heart.png}"><br>
                                 <span class="myDealText">관심상품</span><br>
-                                <span class="myDealNum">12</span>
+                                <span class="myDealNum">0</span>
                             </div>
                         </div>
                     </div>
@@ -97,7 +98,7 @@
                                 <button>구매 확정</button>
                             </div>
                         </div>
-                        <div class="moreImg"><img src="../picture/more.png"></div>
+                        <div class="moreImg"><img src="../picture/more.png" th:src="@{/src/picture/more.png}"></div>
                     </div>
                 </div>
 
