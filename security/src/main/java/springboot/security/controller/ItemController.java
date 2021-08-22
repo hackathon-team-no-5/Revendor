@@ -29,15 +29,15 @@ public class ItemController {
         model.addAttribute("startPage", startPage);
         model.addAttribute("endPage", endPage);
         model.addAttribute("items", items);
-        System.out.println("출력이 왜 안되나요?");
-        for (Item b : items) {
-            System.out.println("id: " + b.getId());
-            System.out.println(" title: " + b.getTitle());
-            System.out.println(" price: " + b.getPrice());
-            System.out.println(" location: " + b.getLocation());
-            System.out.println(" url: " + b.getUrl());
-
-        }
+//        System.out.println("출력이 왜 안되나요?");
+//        for (Item b : items) {
+//            System.out.println("id: " + b.getId());
+//            System.out.println(" title: " + b.getTitle());
+//            System.out.println(" price: " + b.getPrice());
+//            System.out.println(" location: " + b.getLocation());
+//            System.out.println(" url: " + b.getUrl());
+//
+//        }
         return "../static/src/html/buyPage";
     }
 

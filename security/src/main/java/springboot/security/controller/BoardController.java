@@ -32,13 +32,13 @@ public class BoardController {
         model.addAttribute("startPage", startPage);
         model.addAttribute("endPage", endPage);
         model.addAttribute("boards", boards);
-        System.out.println("출력이 왜 안되나요?");
-        for (Board b : boards) {
-            System.out.println("id: " + b.getId());
-            System.out.println(" title: " + b.getTitle());
-            System.out.println(" price: " + b.getPrice());
-
-        }
+//        System.out.println("출력이 왜 안되나요?");
+//        for (Board b : boards) {
+//            System.out.println("id: " + b.getId());
+//            System.out.println(" title: " + b.getTitle());
+//            System.out.println(" price: " + b.getPrice());
+//
+//        }
         return "../static/src/html/buyPage";
     }
 
